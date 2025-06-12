@@ -15,7 +15,7 @@ O principal objetivo deste site é **informar de forma clara e precisa** sobre a
 - O incentivo à inclusão social e escolar;
 - A valorização da diversidade humana.
 
-# 📘 **O site contém informações sobre os seguintes temas:**
+# 📘 O site contém informações sobre os seguintes temas:
 - O que é Sindrome de Down ?
 - Familiares
 - Escolares
@@ -24,14 +24,14 @@ O principal objetivo deste site é **informar de forma clara e precisa** sobre a
 - Relatos de experiências
 - Guia de matérias de acadêmicos
 
-🎓 **Suporte a Pais e professores**
+# 👨‍👩‍👧 Suporte a Pais e professores
   
-🔧 **Tecnologias Utilizadas**
-HTML5: Estrutura de navegação e interatividade.
-CSS3: Estilos e otimização visual.
-JavaScript: Funcionalidades dinâmicas.
+# 🔧 Tecnologias Utilizadas
+- HTML5: Estrutura de navegação e interatividade.
+- CSS3: Estilos e otimização visual.
+- JavaScript: Funcionalidades dinâmicas.
 
- 👩‍💻 Desenvolvedoras
+# 👩‍💻 Desenvolvedoras
 - Gabrielle Beus  
 - Gabriela Monteroso  
 - Nathaly Xavier  
