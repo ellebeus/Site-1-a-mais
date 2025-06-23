@@ -392,10 +392,8 @@
   }
 
   .sobre {
-    width: 146.53px;
-    height: 77.47px;
     left: 999.09px;
-    top: 36px;
+    top: 45.14px;
     position: absolute;
     justify-content: center;
     display: flex;
@@ -412,10 +410,8 @@
   }
 
   .direitos {
-    width: 146.53px;
-    height: 77.47px;
     left: 1112.47px;
-    top: 36px;
+    top: 45.14px;
     position: absolute;
     justify-content: center;
     display: flex;
@@ -432,17 +428,15 @@
   }
 
   .relatos {
-    width: 146.53px;
-    height: 77.47px;
     left: 1229px;
-    top: 36px;
+    top: 45.14px;
     position: absolute;
     justify-content: center;
     display: flex;
     flex-direction: column;
   }
 
-  .incio_span {
+  .inicio_span {
     color: white;
     font-size: 24px;
     font-family: Roboto;
@@ -451,9 +445,7 @@
     word-wrap: break-word;
   }
 
-  .incio {
-    width: 146.53px;
-    height: 59.31px;
+  .inicio {
     left: 879px;
     top: 45.14px;
     position: absolute;
@@ -537,9 +529,44 @@
   }
 
   .desktop---1 {
-    width: 1440px;
-    height: 2793px;
-    position: relative;
-    background: white;
-    overflow: hidden;
+     width: 100vw;           /* 100% da largura da viewport */
+  min-height: 100vh;      /* pelo menos a altura da viewport */
+  max-width: 1440px;      /* mantém limite máximo para não esticar demais */
+  margin: 0 auto;         /* centraliza horizontalmente em telas maiores */
+  position: relative;
+  background: white;
+  overflow-x: hidden;     /* evita scroll horizontal */
+  overflow-y: auto;  
   }
+
+  a {
+  text-decoration: none;
+}
+
+a div span {
+  display: inline-block;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+a div span:hover {
+  transform: scale(1.1);
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+  cursor: pointer;
+}
+
+.inicio, .sobre, .direitos, .relatos {
+  padding: 10px 20px;
+  box-sizing: border-box;
+  border-radius: 6px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease, background-color 0.3s ease;
+  cursor: pointer;
+  background-color: transparent; /* cor inicial, pode ajustar */
+  color: black; /* cor do texto inicial, ajuste se quiser */
+}
+
+.inicio:hover, .sobre:hover, .direitos:hover, .relatos:hover {
+  transform: scale(1.05);
+  box-shadow: 0 8px 15px rgba(0,0,0,0.2);
+  background-color: #519AFA; /* cor de fundo quando passar o mouse, ajuste à sua paleta */
+  color: white; /* muda a cor do texto para dar contraste */
+}
