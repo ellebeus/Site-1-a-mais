@@ -378,17 +378,6 @@
       flex-direction: column;
     }
 
-    .desktop---6 {
-      width: 100vw;           /* 100% da largura da viewport */
-  min-height: 100vh;      /* pelo menos a altura da viewport */
-  max-width: 1440px;      /* mantém limite máximo para não esticar demais */
-  margin: 0 auto;         /* centraliza horizontalmente em telas maiores */
-  position: relative;
-  background: white;
-  overflow-x: hidden;     /* evita scroll horizontal */
-  overflow-y: auto;  
-    }
-
     a {
   text-decoration: none;
 }
