@@ -559,3 +559,66 @@ a div span:hover {
   background-color: #519AFA; /* cor de fundo quando passar o mouse, ajuste à sua paleta */
   color: white; /* muda a cor do texto para dar contraste */
 }
+
+.dropdown {
+    position: absolute; /* Mantém o posicionamento absoluto do seu layout */
+    left: 999.09px; /* Mesma posição 'left' do seu antigo .sobre */
+    top: 45.14px; /* Mesma posição 'top' do seu antigo .sobre */
+    display: inline-block; /* Para que o dropdown se alinhe com outros elementos de navegação, se houver */
+    z-index: 1000; /* Garante que o dropdown apareça acima de outros elementos */
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #0967E1; /* Cor de fundo do menu dropdown */
+    min-width: 180px; /* Largura mínima do menu */
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2); /* Sombra para dar profundidade */
+    z-index: 1;
+    border-radius: 6px;
+    top: 100%; /* Posiciona o dropdown logo abaixo do botão "Sobre" */
+    left: 0;
+    margin-top: 5px; /* Pequeno espaçamento entre o botão e o menu */
+}
+
+.dropdown-content a {
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block; /* Cada link ocupando sua própria linha */
+    text-align: left; /* Alinha o texto à esquerda */
+    font-family: Roboto; /* Mantém a fonte dos seus outros links */
+    font-size: 18px; /* Ajuste o tamanho da fonte se necessário */
+    transition: background-color 0.3s ease; /* Transição suave para o hover */
+}
+
+.dropdown-content a:hover {
+    background-color: #519AFA; /* Cor de destaque ao passar o mouse */
+    color: #ffffff; /* Cor do texto no hover */
+    border-radius: 6px; /* Mantém o arredondamento */
+}
+
+.dropdown:hover .dropdown-content {
+    display: block;
+}
+
+.sobre {
+    position: relative; /* Para que o dropdown-content se posicione em relação a ele */
+    justify-content: center;
+    display: flex;
+    flex-direction: column;
+    padding: 10px 20px; /* Mantém o padding do botão */
+    box-sizing: border-box;
+    border-radius: 6px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease, background-color 0.3s ease;
+    cursor: pointer;
+    background-color: transparent; /* cor inicial, pode ajustar */
+    color: #0967E1; /* cor do texto inicial, ajuste se quiser. Era white no seu CSS, mudei para combinar com a barra de navegação */
+}
+
+.sobre:hover {
+    transform: scale(1.05);
+    box-shadow: 0 8px 15px rgba(0,0,0,0.2);
+    background-color: #519AFA;
+    color: white;
+}
