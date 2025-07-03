@@ -23,33 +23,61 @@
       position: absolute;
     }
 
-    .rectangle-52 {
-      width: 986px;
-      height: 896px;
-      left: 20px;
-      top: 950px;
-      position: absolute;
-      background: #ED365E;
-      border-radius: 20px;
-    }
 
-    .adescobertadagravidezummomentorepletodeemoesmarcadoporsonhoseexpectativassobreofuturobebduranteagestaocomumqueospaisidealizemseufilhoimaginandosuascaractersticasetraandoplanosparasuavidaentretantoquandohasuspeitaouconfirmaodeumacondiocomoasndromededownessasexpectativaspodemserdesafiadasexigindoumareconfiguraodasprojeesiniciaisporessemotivosorealizadosdiversosexamespr-nataisaolongodagestaoentreelesdestacam-seoexamegenticodecaritipoeaultrassonografiaquepodemauxiliarnaidentificaodepossveisalteraesgenticascomoasndromededownodiagnsticoprecocepermitequeospaissepreparememocionalmentebusquemapoioprofissionaletenhamacessosinformaesadequadasparalidarcomasituaoosuportepsicolgicofundamentalnesseprocessoassimcomooacompanhamentocontnuodeprofissionaisapsonascimentoafimdeestimularodesenvolvimentofsicoemocionalecognitivodacriana_span {
-      color: white;
-      font-size: 32px;
-      font-family: Roboto;
-      font-weight: 400;
-      line-height: 32px;
-      word-wrap: break-word;
-    }
+    .vertical-tabs {
+  position: absolute;
+  top: 900px;
+  left: 20px;
+  width: 900px;
+  background: #f5f5f5;
+  border-radius: 12px;
+  padding: 20px;
+  box-shadow: 0 0 10px #ccc;
+  font-family: 'Roboto', sans-serif;
+}
 
-    .a-descoberta-da-gravidez-um-momento-repleto-de-emoes-marcado-por-sonhos-e-expectativas-sobre-o-futuro-beb-durante-a-gestao-comum-que-os-pais-idealizem-seu-filho-imaginando-suas-caractersticas-e-traando-planos-para-sua-vida-entretanto-quando-h-a-suspeita-ou-confirmao-de-uma-condio-como-a-sndrome-de-down-essas-expectativas-podem-ser-desafiadas-exigindo-uma-reconfigurao-das-projees-iniciais-por-esse-motivo-so-realizados-diversos-exames-pr-natais-ao-longo-da-gestao-entre-eles-destacam-se-o-exame-gentico-de-caritipo-e-a-ultrassonografia-que-podem-auxiliar-na-identificao-de-possveis-alteraes-genticas-como-a-sndrome-de-down-o-diagnstico-precoce-permite-que-os-pais-se-preparem-emocionalmente-busquem-apoio-profissional-e-tenham-acesso-s-informaes-adequadas-para-lidar-com-a-situao-o-suporte-psicolgico-fundamental-nesse-processo-assim-como-o-acompanhamento-contnuo-de-profissionais-aps-o-nascimento-a-fim-de-estimular-o-desenvolvimento-fsico-emocional-e-cognitivo-da-criana {
-      width: 884px;
-      height: 1011px;
-      left: 40px;
-      top: 1000px;
-      position: absolute;
-      text-align: justify;
-    }
+.vertical-tabs input[type="radio"] {
+  display: none;
+}
+
+.vertical-tabs label {
+  display: block;
+  padding: 10px;
+  background: #e0e0e0;
+  margin-bottom: 5px;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: 500;
+  transition: background 0.3s;
+}
+
+.vertical-tabs label:hover {
+  background: #ccc;
+}
+
+.tab-content {
+  display: none;
+  padding: 15px;
+  background: white;
+  margin-top: 10px;
+  border-radius: 10px;
+  color: #333;
+  font-size: 16px;
+  line-height: 1.5;
+}
+
+#tab1:checked ~ label[for="tab1"],
+#tab2:checked ~ label[for="tab2"],
+#tab3:checked ~ label[for="tab3"] {
+  background: #0967E1;
+  color: white;
+}
+
+#tab1:checked ~ #content1,
+#tab2:checked ~ #content2,
+#tab3:checked ~ #content3 {
+  display: block;
+}
 
     .desktop---3 {
       width: 1440px;
