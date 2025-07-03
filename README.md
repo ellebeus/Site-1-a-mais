@@ -1,6 +1,6 @@
 # Site 1 a mais
 Bem-vindo ao site 1 a mais, um projeto desenvolvido com o objetivo de informar e conscientizar as pessoas sobre o que é a Síndrome de Down, além de destacar a importância da inclusão e do respeito às diferenças.
-🧬 **O que é a Síndrome de Down?**
+**O que é a Síndrome de Down?**
 
 A Síndrome de Down é uma **alteração genética causada pela trissomia do cromossomo 21**, o que significa que a pessoa possui três cromossomos nesse par, em vez de dois. Essa condição afeta o desenvolvimento físico, intelectual e motor de maneiras variadas.
 
@@ -15,7 +15,7 @@ O principal objetivo deste site é informar de forma clara e precisa sobre a Sí
 - O incentivo à inclusão social e escolar;
 - A valorização da diversidade humana.
 
-# 📘 O site contém informações sobre os seguintes temas:
+# O site contém informações sobre os seguintes temas:
 - O que é Sindrome de Down ?
 - Famílias
 - Escola
@@ -33,7 +33,7 @@ O principal objetivo deste site é informar de forma clara e precisa sobre a Sí
 - CSS3: Estilos e otimização visual.
 - JavaScript: Funcionalidades dinâmicas.
 
-# 👩‍💻 Desenvolvedoras
+# Desenvolvedoras
 - Gabrielle Beus  
 - Gabriela Monteroso  
 - Nathaly Xavier  
