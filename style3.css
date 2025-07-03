@@ -23,59 +23,109 @@
       position: absolute;
     }
 
-
-    .vertical-tabs {
-  position: absolute;
-  top: 900px;
+    .rectangle-52 {
+  width: 986px;
+  height: 896px;
   left: 20px;
-  width: 900px;
-  background: #f5f5f5;
-  border-radius: 12px;
+  top: 950px;
+  position: absolute;
+  background: #ED365E;
+  border-radius: 20px;
   padding: 20px;
-  box-shadow: 0 0 10px #ccc;
-  font-family: 'Roboto', sans-serif;
+  box-sizing: border-box;
 }
 
-.vertical-tabs input[type="radio"] {
+.vertical-tab-container {
+  display: flex;
+  height: 100%;
+}
+
+.tab-menu {
+  display: flex;
+  flex-direction: column;
+  width: 200px;
+  margin-right: 20px;
+}
+
+.tab-menu input[type="radio"] {
   display: none;
 }
 
-.vertical-tabs label {
-  display: block;
-  padding: 10px;
-  background: #e0e0e0;
-  margin-bottom: 5px;
+.tab-menu label {
+  padding: 12px;
+  margin-bottom: 10px;
   border-radius: 8px;
   cursor: pointer;
-  font-weight: 500;
-  transition: background 0.3s;
+  text-align: center;
+  font-weight: 600;
+  color: white;
+  transition: filter 0.3s;
 }
 
-.vertical-tabs label:hover {
-  background: #ccc;
+.tab-menu label:hover {
+  filter: brightness(0.9);
 }
 
+/* Botões com cores diferentes */
+.btn-azul {
+  background: #42A5F5;
+}
+.btn-verde {
+  background: #66BB6A;
+}
+.btn-vermelho {
+  background: #EF5350;
+}
+
+/* Conteúdo ao lado */
+.tab-content-area {
+  flex: 1;
+  border-radius: 12px;
+  overflow-y: auto;
+  font-family: Roboto, sans-serif;
+  font-size: 16px;
+  line-height: 1.6;
+  color: white;
+  padding: 20px;
+  position: relative;
+}
+
+/* Todos escondidos por padrão */
 .tab-content {
   display: none;
-  padding: 15px;
-  background: white;
-  margin-top: 10px;
-  border-radius: 10px;
-  color: #333;
-  font-size: 16px;
-  line-height: 1.5;
+  position: absolute;
+  inset: 0;
+  padding: 20px;
+  border-radius: 12px;
+  box-sizing: border-box;
 }
 
+/* Conteúdo com fundo de cor correspondente */
+.content-azul {
+  background: #42A5F5;
+}
+.content-verde {
+  background: #66BB6A;
+}
+.content-vermelho {
+  background: #EF5350;
+}
+
+/* Mostrar conteúdo ativo */
 #tab1:checked ~ label[for="tab1"],
 #tab2:checked ~ label[for="tab2"],
 #tab3:checked ~ label[for="tab3"] {
-  background: #0967E1;
-  color: white;
+  filter: brightness(1.1);
 }
 
-#tab1:checked ~ #content1,
-#tab2:checked ~ #content2,
-#tab3:checked ~ #content3 {
+/* Exibir o conteúdo relacionado ao botão ativo */
+#tab1:checked ~ .tab-content-area #content1 {
+  display: block;
+}
+#tab2:checked ~ .tab-content-area #content2 {
+  display: block;
+}
+#tab3:checked ~ .tab-content-area #content3 {
   display: block;
 }
 
