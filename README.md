@@ -8,7 +8,7 @@ A Síndrome de Down é uma **alteração genética causada pela trissomia do cro
 
 # 🎯 Objetivo do Projeto
 
-O principal objetivo deste site é **informar de forma clara e precisa** sobre a Síndrome de Down, contribuindo para:
+O principal objetivo deste site é informar de forma clara e precisa sobre a Síndrome de Down, contribuindo para:
 
 - A conscientização da sociedade;
 - A quebra de estigmas e preconceitos;
@@ -17,14 +17,16 @@ O principal objetivo deste site é **informar de forma clara e precisa** sobre a
 
 # 📘 O site contém informações sobre os seguintes temas:
 - O que é Sindrome de Down ?
-- Familiares
-- Escolares
+- Famílias
+- Escola
 - Desenvolvimento individual
 - Direitos
 - Relatos de experiências
-- Guia de matérias de acadêmicos
+- Guia de matérias acadêmicos
 
-# 👨‍👩‍👧 Suporte a Pais e professores
+# 👨‍👩‍👧 Suporte aos Pais e professores
+- Através de matérias de apoio que possam auxiliar os pais no processo do desenvolvimento do(a) filho(a).
+- Estímulo aos professores para práticas inclusivas, com orientações e estratégias que favoreçam a adaptação e o acolhimento de todos os alunos em sala de aula.
   
 # 🔧 Tecnologias Utilizadas
 - HTML5: Estrutura de navegação e interatividade.
