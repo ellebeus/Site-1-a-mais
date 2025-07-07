@@ -23,6 +23,78 @@
       position: absolute;
     }
 
+    .sobre_span {
+    color: white;
+    font-size: 24px;
+    font-family: Roboto;
+    font-weight: 400;
+    line-height: 24px;
+    word-wrap: break-word;
+  }
+
+  .sobre {
+    left: 999.09px;
+    top: 45.14px;
+    position: absolute;
+    justify-content: center;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .direitos_span {
+    color: white;
+    font-size: 24px;
+    font-family: Roboto;
+    font-weight: 400;
+    line-height: 24px;
+    word-wrap: break-word;
+  }
+
+  .direitos {
+    left: 1112.47px;
+    top: 45.14px;
+    position: absolute;
+    justify-content: center;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .relatos_span {
+    color: white;
+    font-size: 24px;
+    font-family: Roboto;
+    font-weight: 400;
+    line-height: 24px;
+    word-wrap: break-word;
+  }
+
+  .relatos {
+    left: 1229px;
+    top: 45.14px;
+    position: absolute;
+    justify-content: center;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .inicio_span {
+    color: white;
+    font-size: 24px;
+    font-family: Roboto;
+    font-weight: 400;
+    line-height: 24px;
+    word-wrap: break-word;
+  }
+
+  .inicio {
+    left: 879px;
+    top: 45.14px;
+    position: absolute;
+    justify-content: center;
+    display: flex;
+    flex-direction: column;
+  }
+
     .rectangle-52 {
   width: 986px;
   height: 896px;
@@ -136,24 +208,3 @@
       background: white;
       overflow: hidden;
     }
-
-@media (max-width: 768px) {
-  /* Estilos para telas menores que 768px (tablets e smartphones) */
-  .container {
-    width: 95%;
-  }
-}
-
-@media (min-width: 769px) and (max-width: 1024px) {
-  /* Estilos para telas entre 769px e 1024px (tablets) */
-  .container {
-    width: 80%;
-  }
-}
-
-@media (min-width: 1025px) {
-  /* Estilos para telas maiores que 1024px (desktops) */
-  .container {
-    width: 70%;
-  }
-}
