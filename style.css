@@ -140,6 +140,12 @@
     position: absolute;
     background: #0967E1;
     border-radius: 20px;
+    transition: transform 0.3s ease; 
+  }
+
+  .rectangle-48:hover {
+    transform: scale(1.05);
+    cursor: pointer;
   }
 
   .rectangle-47 {
@@ -297,6 +303,12 @@
     position: absolute;
     background: #D90E3A;
     border-radius: 10px;
+    transition: transform 0.3s ease;
+  }
+
+  .rectangle-49:hover {
+    transform: scale(1.05);
+    cursor: pointer;
   }
 
   .maissobre_span {
@@ -306,6 +318,18 @@
     font-weight: 700;
     line-height: 40px;
     word-wrap: break-word;
+    transition: transform 0.3s ease;
+    border-radius: 10px;
+    background: #D90E3A;
+    width: 257px;
+    height: 55px;
+    left: 177px;
+    top: 1902px;
+  }
+
+  .maissobre_span:hover {
+    transform: scale(1.05);
+    cursor: pointer;
   }
 
   .mais-sobre {
