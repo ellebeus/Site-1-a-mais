@@ -295,36 +295,17 @@
     flex-direction: column;
   }
 
-  .rectangle-49 {
-    width: 257px;
-    height: 55px;
-    left: 177px;
-    top: 1902px;
-    position: absolute;
-    background: #D90E3A;
-    border-radius: 10px;
-    transition: transform 0.3s ease;
-  }
-
-  .rectangle-49:hover {
-    transform: scale(1.05);
-    cursor: pointer;
-  }
-
   .maissobre_span {
     color: white;
-    font-size: 40px;
+    font-size: 30px;
     font-family: Unkempt;
     font-weight: 700;
     line-height: 40px;
-    word-wrap: break-word;
+    white-space: nowrap;
     transition: transform 0.3s ease;
     border-radius: 10px;
     background: #D90E3A;
-    width: 257px;
-    height: 55px;
-    left: 177px;
-    top: 1902px;
+    padding: 6px 14px;
   }
 
   .maissobre_span:hover {
@@ -344,23 +325,22 @@
     flex-direction: column;
   }
 
-  .rectangle-50 {
-    width: 257px;
-    height: 55px;
-    left: 591px;
-    top: 1902px;
-    position: absolute;
-    background: #DD6809;
-    border-radius: 10px;
-  }
-
   .maissobre_01_span {
     color: white;
-    font-size: 40px;
+    font-size: 30px;
     font-family: Unkempt;
     font-weight: 700;
     line-height: 40px;
-    word-wrap: break-word;
+    white-space: nowrap;
+    transition: transform 0.3s ease;
+    border-radius: 10px;
+    background: #DD6809;
+    padding: 6px 14px;
+  }
+
+  .maissobre_01_span:hover {
+    transform: scale(1.05);
+    cursor: pointer;
   }
 
   .mais-sobre_01 {
@@ -375,23 +355,22 @@
     flex-direction: column;
   }
 
-  .rectangle-51 {
-    width: 257px;
-    height: 55px;
-    left: 1005px;
-    top: 1902px;
-    position: absolute;
-    background: #305B94;
-    border-radius: 10px;
-  }
-
   .maissobre_02_span {
     color: white;
-    font-size: 40px;
+    font-size: 30px;
     font-family: Unkempt;
     font-weight: 700;
     line-height: 40px;
-    word-wrap: break-word;
+    white-space: nowrap;
+    transition: transform 0.3s ease;
+    border-radius: 10px;
+    background: #305B94;
+    padding: 6px 14px;
+  }
+
+  .maissobre_02_span:hover {
+    transform: scale(1.05);
+    cursor: pointer;
   }
 
   .mais-sobre_02 {
