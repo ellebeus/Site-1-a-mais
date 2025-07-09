@@ -377,3 +377,13 @@
       display: flex;
       flex-direction: column;
     }
+
+    @media (max-width: 768px) {
+            .image-1-section {
+                flex-direction: column; /* Empilha os elementos em telas menores */
+                padding-top: 5rem; /* Ajusta o padding para o cabeçalho fixo */
+            }
+            .info-card {
+                margin-bottom: 1.5rem; /* Espaçamento entre os cards empilhados */
+            }
+        }
