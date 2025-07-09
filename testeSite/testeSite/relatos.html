@@ -1,0 +1,404 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Relatos - Instituto Mais</title>
+    <!-- Importação das fontes do Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Comfortaa:wght@400;700&family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+    <style>
+        /* CSS EMBUTIDO AQUI */
+        /* Importação das fontes do Google Fonts */
+        @import url('https://fonts.googleapis.com/css2?family=Comfortaa:wght@400;700&family=Poppins:wght@400;600&display=swap');
+
+        /* Definição de variáveis CSS para cores, facilitando a manutenção */
+        :root {
+            --primary-blue: #4A90E2;
+            --light-blue: #E0F2F7;
+            --dark-text: #333;
+            --paragraph-text: #555;
+            --red-bullet: #FF6B6B;
+            --yellow-flower: #FFD666;
+            --white: #FFFFFF;
+            --orange-highlight: #FF9800; /* Nova cor para o destaque laranja */
+        }
+
+        /* Estilos globais para o corpo da página */
+        body {
+            font-family: 'Poppins', sans-serif; /* Fonte principal */
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            background-color: var(--white);
+            color: var(--dark-text);
+            line-height: 1.6;
+        }
+
+        /* Estilos para a barra de navegação */
+        .navbar {
+            display: flex; /* Usa flexbox para alinhar itens */
+            justify-content: space-between; /* Espaça o logo e o menu */
+            align-items: center; /* Centraliza verticalmente */
+            background-color: var(--primary-blue);
+            padding: 10px 40px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Sombra suave */
+            border-bottom-left-radius: 10px; /* Cantos arredondados */
+            border-bottom-right-radius: 10px;
+        }
+
+        .navbar .logo img {
+            height: 60px; /* Altura do logo */
+            border-radius: 50%; /* Torna o logo circular */
+        }
+
+        .navbar nav ul {
+            list-style: none; /* Remove marcadores de lista */
+            margin: 0;
+            padding: 0;
+            display: flex; /* Usa flexbox para os itens do menu */
+            gap: 30px; /* Espaçamento entre os itens do menu */
+        }
+
+        .navbar nav ul li a {
+            color: var(--white);
+            text-decoration: none; /* Remove sublinhado */
+            font-weight: 600;
+            font-size: 1.1em;
+            transition: color 0.3s ease; /* Transição suave para o hover */
+            padding: 5px 10px; /* Preenchimento para área de clique */
+            border-radius: 5px; /* Cantos arredondados nos links */
+        }
+
+        .navbar nav ul li a:hover,
+        .navbar nav ul li a.active {
+            color: var(--light-blue);
+            background-color: rgba(255, 255, 255, 0.1); /* Fundo leve no hover/ativo */
+        }
+
+        /* Estilos para a seção de título principal (Relatos) */
+        .hero-section {
+            background-color: var(--light-blue);
+            text-align: center;
+            padding: 80px 20px;
+            margin-top: -1px; /* Ajuste para evitar lacunas com o header */
+            border-bottom-left-radius: 15px;
+            border-bottom-right-radius: 15px;
+        }
+
+        .hero-section h1 {
+            font-family: 'Comfortaa', cursive; /* Fonte para o título */
+            font-size: 3.5em;
+            color: var(--primary-blue);
+            margin: 0;
+            font-weight: 700;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1); /* Sombra no texto */
+        }
+
+        /* Seção principal de relatos */
+        .relatos-container {
+            max-width: 1000px;
+            margin: 80px auto;
+            padding: 0 20px;
+            display: flex;
+            flex-direction: column;
+            gap: 60px;
+        }
+
+        .relato-item {
+            display: flex;
+            align-items: center;
+            gap: 40px;
+            background-color: var(--white);
+            padding: 30px;
+            border-radius: 15px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .relato-item:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+        }
+
+        .relato-item.reverse {
+            flex-direction: row-reverse; /* Inverte a ordem para imagem à direita */
+        }
+
+        .relato-item .image-placeholder {
+            width: 250px;
+            height: 250px;
+            background-color: var(--primary-blue); /* Cor para o placeholder azul */
+            border-radius: 10px;
+            flex-shrink: 0; /* Impede que a imagem encolha */
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            color: var(--white);
+            font-size: 1.2em;
+            font-weight: 600;
+            overflow: hidden; /* Garante que a imagem se ajuste */
+        }
+
+        .relato-item .image-placeholder img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover; /* Garante que a imagem cubra o espaço */
+            border-radius: 10px;
+        }
+
+        .relato-item .text-content {
+            flex-grow: 1; /* Permite que o texto ocupe o espaço restante */
+            font-size: 1.05em;
+            color: var(--paragraph-text);
+            line-height: 1.7;
+        }
+
+        .relato-item .text-content p {
+            margin: 0;
+        }
+
+        /* Estilos para a seção "Relato" com a caixa laranja */
+        .final-relato-section {
+            max-width: 1000px;
+            margin: 60px auto 100px auto;
+            padding: 0 20px;
+            display: flex;
+            align-items: center;
+            gap: 40px;
+        }
+
+        .final-relato-section .orange-box {
+            width: 250px;
+            height: 250px;
+            background-color: var(--orange-highlight);
+            border-radius: 10px;
+            flex-shrink: 0;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        }
+
+        .final-relato-section h3 {
+            font-family: 'Comfortaa', cursive;
+            font-size: 2.2em;
+            color: var(--dark-text);
+            margin: 0;
+            flex-grow: 1;
+        }
+
+        /* --------------------------------------------------- */
+        /* Media Queries para Responsividade */
+        /* --------------------------------------------------- */
+
+        /* Para telas menores que 900px (ajuste para relatos) */
+        @media (max-width: 900px) {
+            .relato-item {
+                flex-direction: column; /* Empilha imagem e texto */
+                text-align: center;
+            }
+
+            .relato-item.reverse {
+                flex-direction: column; /* Mantém empilhado mesmo em reverse */
+            }
+
+            .relato-item .image-placeholder {
+                width: 200px;
+                height: 200px;
+                margin-bottom: 20px;
+            }
+
+            .final-relato-section {
+                flex-direction: column;
+                text-align: center;
+            }
+
+            .final-relato-section .orange-box {
+                width: 200px;
+                height: 200px;
+                margin-bottom: 20px;
+            }
+
+            .final-relato-section h3 {
+                font-size: 1.8em;
+            }
+        }
+
+        /* Para telas menores que 768px (tablets e celulares maiores) */
+        @media (max-width: 768px) {
+            .navbar {
+                flex-direction: column; /* Empilha o logo e o menu */
+                padding: 15px 20px;
+            }
+
+            .navbar nav ul {
+                margin-top: 15px;
+                flex-wrap: wrap; /* Permite que os itens do menu quebrem linha */
+                justify-content: center;
+                gap: 15px;
+            }
+
+            .hero-section {
+                padding: 60px 20px;
+            }
+
+            .hero-section h1 {
+                font-size: 2.8em;
+            }
+
+            .relatos-container {
+                margin: 60px auto;
+                padding: 0 15px;
+                gap: 40px;
+            }
+
+            .relato-item {
+                padding: 20px;
+            }
+
+            .relato-item .text-content {
+                font-size: 1em;
+            }
+
+            .final-relato-section {
+                margin: 40px auto 80px auto;
+                padding: 0 15px;
+            }
+        }
+
+        /* Para telas menores que 480px (celulares) */
+        @media (max-width: 480px) {
+            .navbar {
+                padding: 10px 15px;
+            }
+
+            .navbar .logo img {
+                height: 50px;
+            }
+
+            .navbar nav ul {
+                gap: 10px;
+                font-size: 0.9em;
+            }
+
+            .hero-section {
+                padding: 40px 15px;
+            }
+
+            .hero-section h1 {
+                font-size: 2em;
+            }
+
+            .relatos-container {
+                margin: 40px auto;
+                gap: 30px;
+            }
+
+            .relato-item .image-placeholder {
+                width: 150px;
+                height: 150px;
+            }
+
+            .relato-item .text-content {
+                font-size: 0.95em;
+            }
+
+            .final-relato-section .orange-box {
+                width: 150px;
+                height: 150px;
+            }
+
+            .final-relato-section h3 {
+                font-size: 1.5em;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Cabeçalho da página com a barra de navegação -->
+    <header class="navbar">
+        <div class="logo">
+            <!-- Imagem do logo. Substitua o placeholder pela URL do seu logo real. -->
+            <img src="https://placehold.co/60x60/4A90E2/FFFFFF?text=Logo" alt="Instituto Mais Logo">
+        </div>
+        <nav>
+            <ul>
+                <li><a href="#">Início</a></li>
+                <li><a href="#">Sobre</a></li>
+                <li><a href="#">Direitos</a></li>
+                <li><a href="#" class="active">Relatos</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Conteúdo principal da página -->
+    <main>
+        <!-- Seção de título principal -->
+        <section class="hero-section">
+            <h1>Relatos</h1>
+        </section>
+
+        <!-- Container para os relatos individuais -->
+        <section class="relatos-container">
+            <!-- Primeiro relato (imagem à esquerda) -->
+            <div class="relato-item">
+                <div class="image-placeholder">
+                    <!-- Substitua esta URL pela imagem do professor -->
+                    <img src="https://placehold.co/250x250/4A90E2/FFFFFF?text=Professor" alt="Imagem do Professor">
+                </div>
+                <div class="text-content">
+                    <p>"Minha experiência como professor foi desafiadora e extraordinária. Ao adaptar metodologias e promover a autonomia, percebi o impacto real no desenvolvimento da aluna. Um dos momentos mais marcantes foi acompanhar o seu progresso no uso autônomo do computador, algo que inicialmente parecia inatingível. Cada pequeno reconhecimento de letras, executando comandos básicos e navegando entre páginas era uma recompensa imensa. Aprendemos a valorizar pequenas conquistas, que na verdade representam grandes vitórias. Fora da sala de educação, também aprendemos com nossos alunos todos os dias."</p>
+                </div>
+            </div>
+
+            <!-- Segundo relato (imagem à direita) -->
+            <div class="relato-item reverse">
+                <div class="image-placeholder" style="background-color: #FF6B6B;">
+                    <!-- Substitua esta URL pela imagem da mulher -->
+                    <img src="https://placehold.co/250x250/FF6B6B/FFFFFF?text=Mulher" alt="Imagem da Mulher">
+                </div>
+                <div class="text-content">
+                    <p>"Uma situação que me marcou positivamente foi ver a aluna fazer o login no computador da escola pela primeira vez sem precisar conferir os dados, mostrando autonomia e segurança. Também acompanhar a evolução na leitura e escrita, desde as letras no ABC até as frases e parágrafos, me ensinaram que cada caso é único e não pode ser generalizado. Eles são pessoas que tem suas especificidades e o melhor modo de lidar e auxiliar é conhecer a pessoa, perceber suas limitações e potencialidades, ter paciência, e se adaptar."</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Seção final com a caixa laranja e o título "Relato" -->
+        <section class="final-relato-section">
+            <div class="orange-box">
+                <!-- Conteúdo ou imagem opcional dentro da caixa laranja -->
+            </div>
+            <h3>Relato</h3>
+        </section>
+    </main>
+
+    <script>
+        /* JAVASCRIPT EMBUTIDO AQUI */
+        // O JavaScript para esta página é mínimo, pois o conteúdo é predominantemente estático.
+        // No entanto, é uma boa prática incluir o arquivo JS e um listener para o carregamento do DOM.
+
+        document.addEventListener('DOMContentLoaded', () => {
+            // Este console.log serve para verificar se o script está sendo carregado corretamente.
+            console.log('Página "Relatos" carregada com sucesso!');
+
+            // Exemplo de como você poderia adicionar interatividade futura:
+            // Se houvesse um menu responsivo (hambúrguer), você adicionaria o código aqui:
+            // const menuToggle = document.querySelector('.menu-toggle');
+            // const navMenu = document.querySelector('.navbar nav ul');
+            //
+            // if (menuToggle) {
+            //     menuToggle.addEventListener('click', () => {
+            //         navMenu.classList.toggle('show');
+            //     });
+            // }
+
+            // Ou se você quisesse adicionar um efeito de scroll suave para âncoras:
+            // document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            //     anchor.addEventListener('click', function (e) {
+            //         e.preventDefault();
+            //         document.querySelector(this.getAttribute('href')).scrollIntoView({
+            //             behavior: 'smooth'
+            //         });
+            //     });
+            // });
+        });
+    </script>
+</body>
+</html>

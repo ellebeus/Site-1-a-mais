@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Síndrome de Down</title>
+    <!-- Inclui o Tailwind CSS para estilização rápida e responsiva -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Unkempt:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+    <style>
+        /* Define a fonte Inter para todo o corpo do documento */
+        body {
+            font-family: 'Inter', sans-serif;
+            overflow-x: hidden; /* Evita rolagem horizontal */
+        }
+        /* Estilo para o cabeçalho fixo */
+        .header-fixed {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            z-index: 1000;
+            background-color: #0967E1; /* Fundo branco para o cabeçalho */
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Sombra suave para destaque */
+        }
+        /* Estilo para a seção de herói com gradiente */
+        .hero-section {
+            background-image: url(image\ 1.png);
+            background-size: cover; /* Garante que a imagem cubra toda a área */
+            background-position: center; /* Centraliza a imagem */
+            min-height: 800px; /* Altura mínima para a seção */
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+            overflow: hidden; /* Garante que a imagem não transborde */
+        }
+
+        .hero-section h1 {
+            font-family: 'Unkempt', cursive; /* Aplica a fonte Unkempt ao h1 */
+            font-size: 6rem; /* Equivalente a text-5xl para desktop */
+            line-height: 1.2; /* Equivalente a leading-tight */
+            font-weight: bold; /* Equivalente a font-bold */
+            color: white; /* Cor branca para o texto */
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5); /* Equivalente a drop-shadow-lg */
+        }
+
+        /* Estilos para os cards de informação */
+        .info-card {
+            background-color: white;
+            border-radius: 1rem; /* Cantos arredondados */
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Sombra para os cards */
+            padding: 1.5rem;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            height: 100%; /* Garante que os cards tenham a mesma altura */
+        }
+        /* Estilo para os botões "Mais sobre" */
+        .btn-more {
+            padding: 0.75rem 1.5rem;
+            border-radius: 9999px; /* Botões totalmente arredondados */
+            font-weight: 600;
+            text-align: center;
+            transition: background-color 0.3s ease; /* Transição suave para o hover */
+        }
+        /* Cores específicas para os botões dos cards */
+        .btn-family { background-color: #EF4444; color: white; } /* Vermelho */
+        .btn-education { background-color: #F97316; color: white; } /* Laranja */
+        .btn-personal { background-color: #3B82F6; color: white; } /* Azul */
+
+        /* Efeito hover para os botões */
+        .btn-family:hover { background-color: #DC2626; }
+        .btn-education:hover { background-color: #EA580C; }
+        .btn-personal:hover { background-color: #2563EB; }
+
+        /* Estilos para os círculos coloridos */
+        .circle-orange { background-color: #FF8C00; } /* Laranja */
+        .circle-pink { background-color: #FF69B4; } /* Rosa */
+        .circle-blue { background-color: #1E90FF; } /* Azul */
+        .circle-yellow { background-color: #FFD700; } /* Amarelo */
+        .circle-red { background-color: #FF0000; } /* Vermelho */
+
+        /* Responsividade para telas menores */
+        @media (max-width: 768px) {
+            .hero-section h1 {
+                /* AUMENTANDO O TAMANHO AQUI PARA TELAS MAIORES: */
+                font-size: 7rem; /* Era 4rem, agora está maior para telas grandes */
+            }
+            .hero-image {
+                max-width: 80%; /* Aumenta a largura da imagem em telas menores */
+                position: static; /* Remove o posicionamento absoluto em telas menores */
+                margin-top: 2rem; /* Adiciona margem superior */
+            }
+            .hero-section {
+                flex-direction: column; /* Empilha os elementos em telas menores */
+                padding-top: 5rem; /* Ajusta o padding para o cabeçalho fixo */
+            }
+            .info-card {
+                margin-bottom: 1.5rem; /* Espaçamento entre os cards empilhados */
+            }
+        }
+    </style>
+</head>
+<body class="bg-gray-50">
+
+    <!-- Cabeçalho Fixo -->
+    <header class="header-fixed py-4 px-6 flex justify-between items-center">
+        <div class="flex items-center space-x-2">
+            <!-- Logo "1 A MAIS" -->
+            <img src="Rectangle 32.png" class="rounded-full">
+        </div>
+        <nav>
+            <ul class="flex space-x-6 text-white font-medium">
+                <li><a href="#" class="hover:text-blue-600 transition duration-300">Início</a></li>
+                <li><a href="#" class="hover:text-blue-600 transition duration-300">Sobre</a></li>
+                <li><a href="#" class="hover:text-blue-600 transition duration-300">Direitos</a></li>
+                <li><a href="#" class="hover:text-blue-600 transition duration-300">Relatos</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Seção de Herói -->
+    <section class="hero-section pt-20 pb-10 md:pb-0">
+        <div class="container mx-auto flex flex-col md:flex-row items-center justify-between px-6">
+            <div class="text-white text-center md:text-left mb-8 md:mb-0">
+                <h1>Síndrome<br>de Down</h1> 
+            </div>
+        </div>
+    </section>
+
+    <!-- Seção de Informações Principais -->
+    <section class="py-16 bg-white">
+        <div class="container mx-auto px-6 flex flex-col md:flex-row items-center justify-center relative">
+            <!-- Círculos decorativos -->
+            <div class="absolute top-0 left-1/4 transform -translate-x-1/2 -translate-y-1/2 w-24 h-24 rounded-full circle-orange opacity-70"></div>
+            <div class="absolute top-1/2 left-1/4 transform -translate-x-1/2 -translate-y-1/2 w-16 h-16 rounded-full circle-pink opacity-70"></div>
+            <div class="absolute bottom-0 left-1/4 transform -translate-x-1/2 -translate-y-1/2 w-12 h-12 rounded-full circle-blue opacity-70"></div>
+
+            <div class="md:w-1/2 flex justify-center mb-8 md:mb-0 relative">
+                <!-- Imagem do bebê sorrindo -->
+                <img src="image (2).png" alt="Bebê sorrindo" class="rounded-full shadow-lg max-w-full h-auto">
+            </div>
+            <div class="md:w-1/2 md:pl-12 text-gray-800">
+                <h2 class="text-4xl font-bold mb-4 flex items-center">
+                    21 de Março:
+                    <!-- Ícone de laço amarelo -->
+                    <svg class="w-10 h-10 ml-3 text-yellow-500" fill="currentColor" viewBox="0 0 20 20">
+                        <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm-1-12a1 1 0 10-2 0v4a1 1 0 00.293.707l3 3a1 1 0 001.414-1.414L9 10.586V6z" clip-rule="evenodd" />
+                    </svg>
+                </h2>
+                <p class="text-lg leading-relaxed">
+                    Dia Internacional da Síndrome de Down, essa data foi proposta pela Down Syndrome International, pois faz referência aos três cromossomos no par 21. Uma atividade comum neste dia é usar pares de meias coloridas ou incompatíveis, como forma de apoio a pessoas com síndrome de down.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Seção de Cards de Tópicos -->
+    <section class="py-16 bg-gray-100">
+        <div class="container mx-auto px-6 grid grid-cols-1 md:grid-cols-3 gap-8">
+            <!-- Card Família -->
+            <div class="info-card bg-red-500 text-white">
+                <div>
+                    <h3 class="text-2xl font-bold mb-4">Família</h3>
+                    <p class="text-base leading-relaxed mb-6">
+                        Gravidez, exames pré-natais, impacto do diagnóstico, relação entre os pais e o filho, entre outras coisas.
+                    </p>
+                </div>
+                <button class="btn-more btn-family self-start">Mais sobre</button>
+            </div>
+
+            <!-- Card Educação -->
+            <div class="info-card bg-orange-500 text-white">
+                <div>
+                    <h3 class="text-2xl font-bold mb-4">Educação</h3>
+                    <p class="text-base leading-relaxed mb-6">
+                        Escola Inclusiva e Escola Especial.
+                    </p>
+                </div>
+                <button class="btn-more btn-education self-start">Mais sobre</button>
+            </div>
+
+            <!-- Card Questões Pessoais -->
+            <div class="info-card bg-blue-500 text-white">
+                <div>
+                    <h3 class="text-2xl font-bold mb-4">Questões pessoais</h3>
+                    <p class="text-base leading-relaxed mb-6">
+                        Desenvolvimento individual e desenvolvimento social.
+                    </p>
+                </div>
+                <button class="btn-more btn-personal self-start">Mais sobre</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Seção de Trissomia 21 -->
+    <section class="py-16 bg-white">
+        <div class="container mx-auto px-6 text-gray-800 text-center relative">
+            <!-- Círculos decorativos -->
+            <div class="absolute top-0 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-16 h-16 rounded-full circle-pink opacity-70"></div>
+            <div class="absolute top-1/2 right-0 transform -translate-x-1/2 -translate-y-1/2 w-20 h-20 rounded-full circle-yellow opacity-70"></div>
+
+            <h2 class="text-4xl font-bold mb-6 flex items-center justify-center">
+                Trissomia 21
+                <!-- Ícone de flor amarela -->
+                <svg class="w-10 h-10 ml-3 text-yellow-500" fill="currentColor" viewBox="0 0 20 20">
+                    <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zM8.707 7.293a1 1 0 00-1.414 1.414L8.586 10l-1.293 1.293a1 1 0 101.414 1.414L10 11.414l1.293 1.293a1 1 0 001.414-1.414L11.414 10l1.293-1.293a1 1 0 00-1.414-1.414L10 8.586 8.707 7.293z" clip-rule="evenodd" />
+                </svg>
+            </h2>
+            <p class="text-lg leading-relaxed max-w-3xl mx-auto">
+                A <span class="font-bold">síndrome de Down</span>, também conhecida como trissomia do cromossomo 21, é uma alteração genética que resulta em uma série de características físicas e cognitivas que diferem das de indivíduos típicos.
+            </p>
+        </div>
+    </section>
+
+    <!-- Rodapé -->
+    <footer class="bg-blue-600 text-white py-8 text-center">
+        <p>&copy; 2024 A+ MAIS. Todos os direitos reservados.</p>
+    </footer>
+
+    <script>
+        // JavaScript para qualquer interatividade futura, se necessário.
+        // Por enquanto, o site é estático, mas você pode adicionar funcionalidades aqui.
+        console.log("Página carregada com sucesso!");
+    </script>
+</body>
+</html>

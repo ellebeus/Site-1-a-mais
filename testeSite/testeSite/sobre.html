@@ -1,0 +1,348 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>1 A Mais - Como Surgiu</title>
+    <!-- Inclui o Tailwind CSS para estilização rápida e responsiva -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Define a fonte Inter como padrão para todo o documento -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <style>
+        /* Define a fonte Inter para todo o corpo do documento */
+        body {
+            font-family: 'Inter', sans-serif;
+            overflow-x: hidden; /* Evita rolagem horizontal */
+        }
+        /* Estilo para o cabeçalho fixo */
+        .header-fixed {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            z-index: 1000;
+            background-color: white; /* Fundo branco para o cabeçalho */
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Sombra suave para destaque */
+        }
+        /* Estilo para a seção de herói com gradiente amarelo */
+        .hero-section {
+            background: linear-gradient(to right, #FFD700, #FFA500); /* Gradiente de amarelo para laranja */
+            min-height: 500px; /* Altura mínima para a seção */
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+            overflow: hidden; /* Garante que a imagem não transborde */
+            padding-top: 5rem; /* Espaçamento para o cabeçalho fixo */
+        }
+        /* Estilos para os círculos coloridos */
+        .circle-pink { background-color: #FF69B4; } /* Rosa */
+        .circle-blue { background-color: #1E90FF; } /* Azul */
+        .circle-yellow-flower { background-color: #FFD700; } /* Amarelo para a flor */
+
+        /* Estilo para o bloco de texto laranja */
+        .orange-text-block {
+            background-color: #F97316; /* Laranja */
+            border-radius: 1rem; /* Cantos arredondados */
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Sombra */
+            padding: 2.5rem;
+            color: white;
+            text-align: center;
+            line-height: 1.8;
+        }
+
+        /* Estilos para os perfis dos desenvolvedores */
+        .developer-card {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+        }
+        .developer-image {
+            width: 150px;
+            height: 150px;
+            border-radius: 50%; /* Imagem redonda */
+            object-fit: cover;
+            border: 4px solid #3B82F6; /* Borda azul */
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            margin-bottom: 1rem;
+        }
+
+        /* Estilos do Dropdown */
+        .dropdown-container {
+            position: relative;
+            display: inline-block; /* Permite que o dropdown se posicione corretamente */
+        }
+
+        .dropdown-content {
+            display: none; /* Escondido por padrão */
+            position: absolute;
+            background-color: #f9f9f9;
+            min-width: 160px;
+            box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+            z-index: 1;
+            border-radius: 0.5rem;
+            top: 100%; /* Posiciona abaixo do item pai */
+            left: 0;
+            padding: 0.5rem 0;
+        }
+
+        .dropdown-content a {
+            color: black;
+            padding: 12px 16px;
+            text-decoration: none;
+            display: block;
+            text-align: left;
+            transition: background-color 0.3s ease;
+        }
+
+        .dropdown-content a:hover {
+            background-color: #f1f1f1;
+        }
+
+        /* Mostra o dropdown quando o mouse está sobre o contêiner */
+        .dropdown-container:hover .dropdown-content {
+            display: block;
+        }
+
+        /* Responsividade para telas menores (menu hambúrguer) */
+        @media (max-width: 768px) {
+            .desktop-nav {
+                display: none; /* Esconde a navegação desktop */
+            }
+            .hamburger-icon {
+                display: block; /* Mostra o botão do menu hambúrguer */
+            }
+            .mobile-menu {
+                transform: translateX(100%); /* Escondido por padrão */
+                transition: transform 0.3s ease-in-out;
+            }
+            .mobile-menu.open {
+                transform: translateX(0); /* Visível */
+            }
+            .mobile-menu {
+                position: fixed;
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: 100%;
+                background-color: rgba(255, 255, 255, 0.95);
+                z-index: 1001;
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                justify-content: center;
+            }
+            .mobile-menu ul {
+                list-style: none;
+                padding: 0;
+                text-align: center;
+            }
+            .mobile-menu ul li {
+                margin: 1.5rem 0;
+            }
+            .mobile-menu ul li a {
+                font-size: 1.8rem;
+                color: #3B82F6;
+                text-decoration: none;
+            }
+            .close-button {
+                position: absolute;
+                top: 1rem;
+                right: 1rem;
+                background: none;
+                border: none;
+                font-size: 2.5rem;
+                cursor: pointer;
+                color: #3B82F6;
+                z-index: 1002;
+            }
+            .hero-section {
+                flex-direction: column;
+                text-align: center;
+            }
+            .hero-section img {
+                margin-top: 2rem;
+            }
+            .orange-text-block {
+                margin: 0 1rem; /* Ajusta margens em telas pequenas */
+            }
+            .developer-grid {
+                grid-template-columns: 1fr; /* Uma coluna em telas menores */
+            }
+        }
+    </style>
+</head>
+<body class="bg-gray-50" id="top">
+
+    <!-- Cabeçalho Fixo -->
+    <header class="header-fixed py-4 px-6 flex justify-between items-center">
+        <div class="flex items-center space-x-2">
+            <!-- Logo "1 A Mais" -->
+            <img src="Rectangle 32.png" alt="Logo 1 A Mais" class="w-10 h-10 rounded-full">
+            <span class="text-lg font-bold text-blue-600">1 A MAIS</span>
+        </div>
+        <!-- Navegação Desktop -->
+        <nav class="desktop-nav">
+            <ul class="flex space-x-6 text-gray-700 font-medium">
+                <li><a href="#top" class="hover:text-blue-600 transition duration-300">Início</a></li>
+                <li class="dropdown-container">
+                    <a href="#" class="hover:text-blue-600 transition duration-300">Sobre</a>
+                    <div class="dropdown-content">
+                        <a href="#sindrome-de-down">Síndrome de Down</a>
+                        <!-- Adicione outros itens do dropdown aqui se necessário -->
+                    </div>
+                </li>
+                <li><a href="#" class="hover:text-blue-600 transition duration-300">Direitos</a></li>
+                <li><a href="#" class="hover:text-blue-600 transition duration-300">Relatos</a></li>
+            </ul>
+        </nav>
+        <!-- Botão do Menu Hambúrguer (apenas para mobile) -->
+        <button class="hamburger-icon hidden" id="hamburgerButton">
+            &#9776; <!-- Ícone de hambúrguer -->
+        </button>
+    </header>
+
+    <!-- Menu Mobile (Hambúrguer) -->
+    <div class="mobile-menu" id="mobileMenu">
+        <button class="close-button" id="closeMenuButton">&times;</button> <!-- Ícone de fechar -->
+        <nav>
+            <ul>
+                <li><a href="#top" class="text-blue-600">Início</a></li>
+                <li class="relative">
+                    <a href="#" class="text-blue-600" id="mobileSobreDropdown">Sobre &#9662;</a> <!-- Seta para indicar dropdown -->
+                    <ul class="ml-4 mt-2 hidden" id="mobileSobreContent">
+                        <li><a href="#sindrome-de-down" class="text-blue-500 text-base">Síndrome de Down</a></li>
+                    </ul>
+                </li>
+                <li><a href="#" class="text-blue-600">Direitos</a></li>
+                <li><a href="#" class="text-blue-600">Relatos</a></li>
+            </ul>
+        </nav>
+    </div>
+
+    <!-- Seção de Herói -->
+    <section class="hero-section py-16">
+        <div class="container mx-auto flex flex-col md:flex-row items-center justify-between px-6">
+            <!-- Círculos decorativos na seção hero -->
+            <div class="absolute top-10 left-10 w-20 h-20 rounded-full circle-pink opacity-80"></div>
+            <div class="absolute bottom-10 left-1/2 transform -translate-x-1/2 w-16 h-16 rounded-full circle-blue opacity-80"></div>
+
+            <div class="md:w-1/2 flex justify-center mb-8 md:mb-0 relative">
+                <!-- Imagem da menina sorrindo -->
+                
+                <img src="image 1.png" alt="Menina sorrindo" class="rounded-xl shadow-lg max-w-full h-auto">
+            </div>
+            <div class="md:w-1/2 md:pl-12 text-gray-800 text-center md:text-left">
+                <h1 class="text-5xl md:text-6xl font-bold leading-tight drop-shadow-lg text-white">Como surgiu o site<br>1 A Mais?</h1>
+            </div>
+        </div>
+    </section>
+
+    <!-- Bloco de Texto Laranja -->
+    <section class="py-16 bg-gray-50">
+        <div class="container mx-auto px-6">
+            <div class="orange-text-block max-w-4xl mx-auto">
+                <p class="text-xl">
+                    O site 1 A Mais surgiu a partir de um projeto científico que desenvolvemos durante as aulas de Projeto Profissional. Tivemos a liberdade de escolher um tema que nos tocasse de forma especial, e decidimos abordar a inclusão e valorização das pessoas com Síndrome de Down. Acreditamos na importância de promover a empatia, o respeito e a conscientização sobre a diversidade.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Seção "O que é o site 1 A Mais" -->
+    <section class="py-16 bg-white">
+        <div class="container mx-auto px-6 text-gray-800 text-center relative">
+            <!-- Flor amarela decorativa -->
+            <div class="absolute top-0 right-1/4 transform translate-x-1/2 -translate-y-1/2 w-20 h-20 rounded-full circle-yellow-flower opacity-80 flex items-center justify-center text-5xl">
+                <!-- Ícone de flor SVG ou emoji se preferir -->
+                &#10048;
+            </div>
+            <!-- Círculo rosa decorativo -->
+            <div class="absolute bottom-0 left-1/4 transform -translate-x-1/2 translate-y-1/2 w-16 h-16 rounded-full circle-pink opacity-80"></div>
+
+            <h2 class="text-4xl font-bold mb-6">O que é o site 1 A Mais:</h2>
+            <p class="text-lg leading-relaxed max-w-3xl mx-auto">
+                Com esse propósito, criamos o 1 A Mais: um espaço para informar, sensibilizar e incentivar a sociedade a enxergar a beleza e o valor de cada indivíduo.
+            </p>
+        </div>
+    </section>
+
+    <!-- Seção "Desenvolvedoras do site" -->
+    <section class="py-16 bg-gray-100">
+        <div class="container mx-auto px-6">
+            <h2 class="text-4xl font-bold text-center mb-12">Desenvolvedoras do site:</h2>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8 developer-grid">
+                <!-- Desenvolvedora 1 -->
+                <div class="developer-card">
+                    <img src="https://placehold.co/150x150/3B82F6/FFFFFF?text=G.M." alt="Gabriela Monterosso" class="developer-image">
+                    <h3 class="text-xl font-semibold text-blue-600">Gabriela<br>Monterosso</h3>
+                </div>
+                <!-- Desenvolvedora 2 -->
+                <div class="developer-card">
+                    <img src="https://placehold.co/150x150/3B82F6/FFFFFF?text=G.B." alt="Gabrielle Beus" class="developer-image">
+                    <h3 class="text-xl font-semibold text-blue-600">Gabrielle<br>Beus</h3>
+                </div>
+                <!-- Desenvolvedora 3 -->
+                <div class="developer-card">
+                    <img src="https://placehold.co/150x150/3B82F6/FFFFFF?text=N.X." alt="Nathaly Xavier" class="developer-image">
+                    <h3 class="text-xl font-semibold text-blue-600">Nathaly<br>Xavier</h3>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Rodapé -->
+    <footer class="bg-blue-600 text-white py-8 text-center">
+        <p>&copy; 2024 1 A MAIS. Todos os direitos reservados.</p>
+    </footer>
+
+    <script>
+        // JavaScript para o menu hambúrguer e dropdown
+        document.addEventListener('DOMContentLoaded', () => {
+            // Menu Hambúrguer (para mobile)
+            const hamburgerButton = document.getElementById('hamburgerButton');
+            const mobileMenu = document.getElementById('mobileMenu');
+            const closeMenuButton = document.getElementById('closeMenuButton');
+            const mobileSobreDropdown = document.getElementById('mobileSobreDropdown');
+            const mobileSobreContent = document.getElementById('mobileSobreContent');
+
+            if (hamburgerButton) {
+                hamburgerButton.addEventListener('click', () => {
+                    mobileMenu.classList.add('open');
+                });
+            }
+
+            if (closeMenuButton) {
+                closeMenuButton.addEventListener('click', () => {
+                    mobileMenu.classList.remove('open');
+                });
+            }
+
+            // Fechar o menu mobile ao clicar em um link
+            mobileMenu.querySelectorAll('a').forEach(link => {
+                link.addEventListener('click', () => {
+                    mobileMenu.classList.remove('open');
+                });
+            });
+
+            // Dropdown "Sobre" no menu mobile
+            if (mobileSobreDropdown) {
+                mobileSobreDropdown.addEventListener('click', (e) => {
+                    e.preventDefault(); // Previne o comportamento padrão do link
+                    mobileSobreContent.classList.toggle('hidden');
+                });
+            }
+
+            // Smooth scroll para as seções
+            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+                anchor.addEventListener('click', function (e) {
+                    e.preventDefault();
+                    document.querySelector(this.getAttribute('href')).scrollIntoView({
+                        behavior: 'smooth'
+                    });
+                });
+            });
+        });
+    </script>
+</body>
+</html>

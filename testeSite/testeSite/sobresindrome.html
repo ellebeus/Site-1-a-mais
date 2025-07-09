@@ -1,0 +1,380 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Família - Instituto Mais</title>
+    <!-- Importação das fontes do Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Comfortaa:wght@400;700&family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+    <style>
+        /* CSS EMBUTIDO AQUI */
+        /* Importação das fontes do Google Fonts */
+        @import url('https://fonts.googleapis.com/css2?family=Comfortaa:wght@400;700&family=Poppins:wght@400;600&display=swap');
+
+        /* Definição de variáveis CSS para cores, facilitando a manutenção */
+        :root {
+            --primary-blue: #4A90E2;
+            --light-blue: #E0F2F7;
+            --dark-text: #333;
+            --paragraph-text: #555;
+            --yellow-highlight: #FFD666; /* Cor para o destaque amarelo */
+            --white: #FFFFFF;
+            --gray-background: #F0F0F0; /* Fundo para a seção de texto */
+        }
+
+        /* Estilos globais para o corpo da página */
+        body {
+            font-family: 'Poppins', sans-serif; /* Fonte principal */
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            background-color: var(--white);
+            color: var(--dark-text);
+            line-height: 1.6;
+        }
+
+        /* Estilos para a barra de navegação */
+        .navbar {
+            display: flex; /* Usa flexbox para alinhar itens */
+            justify-content: space-between; /* Espaça o logo e o menu */
+            align-items: center; /* Centraliza verticalmente */
+            background-color: var(--primary-blue);
+            padding: 10px 40px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Sombra suave */
+            border-bottom-left-radius: 10px; /* Cantos arredondados */
+            border-bottom-right-radius: 10px;
+        }
+
+        .navbar .logo img {
+            height: 60px; /* Altura do logo */
+            border-radius: 50%; /* Torna o logo circular */
+        }
+
+        .navbar nav ul {
+            list-style: none; /* Remove marcadores de lista */
+            margin: 0;
+            padding: 0;
+            display: flex; /* Usa flexbox para os itens do menu */
+            gap: 30px; /* Espaçamento entre os itens do menu */
+        }
+
+        .navbar nav ul li a {
+            color: var(--white);
+            text-decoration: none; /* Remove sublinhado */
+            font-weight: 600;
+            font-size: 1.1em;
+            transition: color 0.3s ease; /* Transição suave para o hover */
+            padding: 5px 10px; /* Preenchimento para área de clique */
+            border-radius: 5px; /* Cantos arredondados nos links */
+        }
+
+        .navbar nav ul li a:hover,
+        .navbar nav ul li a.active {
+            color: var(--light-blue);
+            background-color: rgba(255, 255, 255, 0.1); /* Fundo leve no hover/ativo */
+        }
+
+        /* Seção da imagem principal */
+        .main-image-section {
+            width: 100%;
+            height: 400px; /* Altura fixa para a imagem */
+            background-color: var(--light-blue); /* Cor de fundo caso a imagem não carregue */
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            overflow: hidden;
+            margin-top: -1px; /* Ajuste para evitar lacunas com o header */
+            border-bottom-left-radius: 15px;
+            border-bottom-right-radius: 15px;
+        }
+
+        .main-image-section img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover; /* Garante que a imagem cubra o espaço sem distorcer */
+            object-position: center 20%; /* Ajusta a posição da imagem para focar no rosto */
+        }
+
+        /* Conteúdo principal da página (seções de texto e menu lateral) */
+        .content-wrapper {
+            display: flex;
+            max-width: 1200px;
+            margin: 60px auto;
+            padding: 0 20px;
+            gap: 40px;
+        }
+
+        /* Menu lateral (abas verticais) */
+        .sidebar-menu {
+            flex-shrink: 0; /* Impede que o menu encolha */
+            width: 250px; /* Largura fixa do menu */
+            background-color: var(--yellow-highlight);
+            border-radius: 15px;
+            padding: 30px 0;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        }
+
+        .sidebar-menu ul {
+            list-style: none;
+            margin: 0;
+            padding: 0;
+        }
+
+        .sidebar-menu ul li {
+            margin-bottom: 10px;
+        }
+
+        .sidebar-menu ul li a {
+            display: block;
+            padding: 15px 30px;
+            color: var(--dark-text);
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 1.1em;
+            transition: background-color 0.3s ease, color 0.3s ease;
+            border-radius: 0 25px 25px 0; /* Arredondamento apenas na direita */
+        }
+
+        .sidebar-menu ul li a.active-tab { /* Classe para a aba ativa */
+            background-color: rgba(255, 255, 255, 0.8);
+            color: var(--primary-blue);
+        }
+
+        .sidebar-menu ul li a:hover:not(.active-tab) { /* Hover para abas não ativas */
+            background-color: rgba(255, 255, 255, 0.5);
+            color: var(--primary-blue);
+        }
+
+        /* Seção de texto principal (conteúdo das abas) */
+        .tab-content-container {
+            flex-grow: 1; /* Permite que a seção de texto ocupe o espaço restante */
+            background-color: var(--gray-background);
+            border-radius: 15px;
+            padding: 40px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            color: var(--paragraph-text);
+            font-size: 1.05em;
+        }
+
+        .tab-content-item {
+            display: none; /* Esconde o conteúdo das abas por padrão */
+        }
+
+        .tab-content-item.active-content { /* Mostra o conteúdo da aba ativa */
+            display: block;
+        }
+
+        .tab-content-item p {
+            margin-bottom: 20px;
+            line-height: 1.7;
+        }
+
+        /* --------------------------------------------------- */
+        /* Media Queries para Responsividade */
+        /* --------------------------------------------------- */
+
+        /* Para telas menores que 900px (ajuste para layout de duas colunas) */
+        @media (max-width: 900px) {
+            .content-wrapper {
+                flex-direction: column; /* Empilha o menu lateral e o texto */
+                gap: 30px;
+            }
+
+            .sidebar-menu {
+                width: 100%; /* Menu lateral ocupa toda a largura */
+                padding: 20px;
+                border-radius: 15px; /* Arredondamento completo */
+            }
+
+            .sidebar-menu ul {
+                display: flex; /* Itens do menu em linha */
+                flex-wrap: wrap;
+                justify-content: center;
+                gap: 10px;
+            }
+
+            .sidebar-menu ul li a {
+                padding: 10px 20px;
+                border-radius: 10px; /* Arredondamento completo */
+            }
+
+            .tab-content-container {
+                padding: 30px;
+            }
+        }
+
+        /* Para telas menores que 768px (tablets e celulares maiores) */
+        @media (max-width: 768px) {
+            .navbar {
+                flex-direction: column;
+                padding: 15px 20px;
+            }
+
+            .navbar nav ul {
+                margin-top: 15px;
+                flex-wrap: wrap;
+                justify-content: center;
+                gap: 15px;
+            }
+
+            .main-image-section {
+                height: 300px; /* Reduz a altura da imagem */
+            }
+
+            .content-wrapper {
+                margin: 40px auto;
+                padding: 0 15px;
+            }
+
+            .tab-content-container {
+                font-size: 1em;
+            }
+        }
+
+        /* Para telas menores que 480px (celulares) */
+        @media (max-width: 480px) {
+            .navbar {
+                padding: 10px 15px;
+            }
+
+            .navbar .logo img {
+                height: 50px;
+            }
+
+            .navbar nav ul {
+                gap: 10px;
+                font-size: 0.9em;
+            }
+
+            .main-image-section {
+                height: 250px;
+            }
+
+            .content-wrapper {
+                margin: 30px auto;
+            }
+
+            .tab-content-container {
+                padding: 20px;
+                font-size: 0.95em;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Cabeçalho da página com a barra de navegação -->
+    <header class="navbar">
+        <div class="logo">
+            <!-- Imagem do logo. Substitua o placeholder pela URL do seu logo real. -->
+            <img src="https://placehold.co/60x60/4A90E2/FFFFFF?text=Logo" alt="Instituto Mais Logo">
+        </div>
+        <nav>
+            <ul>
+                <li><a href="#">Início</a></li>
+                <li><a href="#">Sobre</a></li>
+                <li><a href="#">Direitos</a></li>
+                <li><a href="#">Relatos</a></li>
+                <!-- Adicione um link ativo para "Família" se esta for a página atual -->
+                <li><a href="#" class="active">Família</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Seção da imagem principal -->
+    <section class="main-image-section">
+        <!-- Substitua esta URL pela imagem real com a criança sorrindo -->
+        <img src="https://placehold.co/1200x400/E0F2F7/4A90E2?text=Criança+Sorrindo" alt="Criança com Síndrome de Down sorrindo">
+    </section>
+
+    <!-- Wrapper para o conteúdo principal (menu lateral e texto) -->
+    <div class="content-wrapper">
+        <!-- Menu lateral (abas verticais) -->
+        <aside class="sidebar-menu">
+            <ul>
+                <li><a href="#" class="tab-link active-tab" data-tab="familia">Família</a></li>
+                <li><a href="#" class="tab-link" data-tab="educacao">Educação</a></li>
+                <li><a href="#" class="tab-link" data-tab="pessoal">Questões Pessoais</a></li>
+            </ul>
+        </aside>
+
+        <!-- Container para o conteúdo das abas -->
+        <section class="tab-content-container">
+            <!-- Conteúdo da Aba: Família -->
+            <div id="familia" class="tab-content-item active-content">
+                <h3>A Família no Contexto da Síndrome de Down</h3>
+                <p>A descoberta da gravidez é um momento repleto de emoções, marcado por sonhos e expectativas sobre o futuro bebê. Durante a gestação, é comum que os pais idealizem seu filho, imaginando suas características e traçando planos para sua vida.</p>
+                <p>Entretanto, quando há a suspeita ou confirmação de uma condição como a Síndrome de Down, essas expectativas podem ser desafiadas, exigindo uma reconfiguração das projeções iniciais.</p>
+                <p>Por esse motivo, são realizados diversos exames pré-natais ao longo da gestação. Entre eles, destacam-se o exame genético de cariótipo e a ultrassonografia, que podem auxiliar na identificação de possíveis alterações genéticas, como a Síndrome de Down.</p>
+                <p>O diagnóstico precoce permite que os pais se preparem emocionalmente, busquem apoio profissional e tenham acesso às informações adequadas para lidar com a situação.</p>
+                <p>O suporte psicológico é fundamental nesse processo, assim como o acompanhamento contínuo de profissionais após o nascimento, a fim de estimular o desenvolvimento físico, emocional e cognitivo da criança.</p>
+            </div>
+
+            <!-- Conteúdo da Aba: Educação -->
+            <div id="educacao" class="tab-content-item">
+                <h3>Educação Inclusiva e Desenvolvimento</h3>
+                <p>A educação é um pilar fundamental para o desenvolvimento de crianças e jovens com Síndrome de Down. A inclusão em ambientes escolares regulares, com o devido suporte e adaptações, promove a interação social, o aprendizado e a autonomia.</p>
+                <p>É importante que as instituições de ensino estejam preparadas para oferecer um Atendimento Educacional Especializado (AEE), com recursos pedagógicos e profissionais qualificados para atender às necessidades individuais de cada aluno.</p>
+                <p>O envolvimento da família e a colaboração entre pais, educadores e terapeutas são essenciais para criar um ambiente de aprendizado rico e estimulante, que potencialize as habilidades e talentos de cada estudante.</p>
+            </div>
+
+            <!-- Conteúdo da Aba: Questões Pessoais -->
+            <div id="pessoal" class="tab-content-item">
+                <h3>Autonomia e Qualidade de Vida</h3>
+                <p>As questões pessoais e a busca por autonomia são aspectos cruciais na vida de indivíduos com Síndrome de Down. Promover a independência em atividades diárias, a tomada de decisões e a participação ativa na comunidade são objetivos importantes.</p>
+                <p>O acesso a oportunidades de trabalho, lazer e convívio social contribui significativamente para a qualidade de vida e a autoestima. É fundamental que a sociedade ofereça ambientes acolhedores e acessíveis, que valorizem as capacidades e a individualidade de cada pessoa.</p>
+                <p>O suporte contínuo de profissionais e a conscientização social são chaves para garantir que as pessoas com Síndrome de Down possam viver plenamente, com dignidade e respeito.</p>
+            </div>
+        </section>
+    </div>
+
+    <script>
+        /* JAVASCRIPT EMBUTIDO AQUI */
+        document.addEventListener('DOMContentLoaded', () => {
+            console.log('Página "Família" carregada com sucesso e abas ativadas!');
+
+            const tabLinks = document.querySelectorAll('.tab-link');
+            const tabContents = document.querySelectorAll('.tab-content-item');
+
+            // Função para mostrar o conteúdo da aba selecionada
+            function showTab(tabId) {
+                // Remove a classe 'active-content' de todos os conteúdos
+                tabContents.forEach(content => {
+                    content.classList.remove('active-content');
+                });
+
+                // Adiciona a classe 'active-content' ao conteúdo correspondente ao tabId
+                const activeContent = document.getElementById(tabId);
+                if (activeContent) {
+                    activeContent.classList.add('active-content');
+                }
+            }
+
+            // Função para ativar o link da aba
+            function activateTabLink(clickedLink) {
+                // Remove a classe 'active-tab' de todos os links de aba
+                tabLinks.forEach(link => {
+                    link.classList.remove('active-tab');
+                });
+
+                // Adiciona a classe 'active-tab' ao link clicado
+                clickedLink.classList.add('active-tab');
+            }
+
+            // Adiciona um event listener para cada link de aba
+            tabLinks.forEach(link => {
+                link.addEventListener('click', (event) => {
+                    event.preventDefault(); // Previne o comportamento padrão do link
+                    const tabId = event.target.dataset.tab; // Obtém o ID da aba do atributo data-tab
+                    showTab(tabId); // Mostra o conteúdo da aba
+                    activateTabLink(event.target); // Ativa o link da aba
+                });
+            });
+
+            // Mostra a primeira aba por padrão ao carregar a página
+            if (tabLinks.length > 0 && tabContents.length > 0) {
+                tabLinks[0].click(); // Simula um clique no primeiro link para ativá-lo
+            }
+        });
+    </script>
+</body>
+</html>
