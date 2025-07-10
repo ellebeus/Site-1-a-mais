@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Direitos - Instituto Mais</title>
     <!-- Importação das fontes do Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Unkempt:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Comfortaa:wght@400;700&family=Poppins:wght@400;600&display=swap" rel="stylesheet">
     <style>
         /* CSS EMBUTIDO AQUI */
@@ -17,8 +18,7 @@
             --light-blue: #E0F2F7;
             --dark-text: #333;
             --paragraph-text: #555;
-            --red-bullet: #FF6B6B;
-            --yellow-flower: #FFD666;
+            --red-bullet: #ED365E;
             --white: #FFFFFF;
         }
 
@@ -41,8 +41,6 @@
             background-color: var(--primary-blue);
             padding: 10px 40px;
             box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Sombra suave */
-            border-bottom-left-radius: 10px; /* Cantos arredondados */
-            border-bottom-right-radius: 10px;
         }
 
         .navbar .logo img {
@@ -76,7 +74,6 @@
 
         /* Estilos para a seção de título principal */
         .hero-section {
-            background-color: var(--light-blue);
             text-align: center;
             padding: 80px 20px;
             margin-top: -1px; /* Ajuste para evitar lacunas com o header */
@@ -85,9 +82,9 @@
         }
 
         .hero-section h1 {
-            font-family: 'Comfortaa', cursive; /* Fonte para o título */
+            font-family: 'Unkempt', cursive;/* Fonte para o título */
             font-size: 3.5em;
-            color: var(--primary-blue);
+            color: #ED365E;
             margin: 0;
             font-weight: 700;
             text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1); /* Sombra no texto */
@@ -106,29 +103,24 @@
             font-size: 1.1em;
             line-height: 1.6;
             box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2); /* Sombra mais pronunciada */
-            overflow: hidden; /* Garante que as flores não saiam do contêiner */
         }
 
         /* Estilos para os elementos decorativos de "flor" */
-        .flower {
-            position: absolute;
-            width: 60px;
-            height: 60px;
-            background-color: var(--yellow-flower);
-            border-radius: 50%; /* Torna-os circulares */
-            box-shadow: 0 0 0 10px rgba(255, 214, 102, 0.5); /* Efeito de "pétalas" */
-            z-index: 1; /* Garante que fiquem acima do fundo, mas abaixo do texto */
-        }
+        .imagem-flor-decorativa-top-left {
+    position: absolute; /* Ou 'relative', 'fixed', dependendo do seu layout original */
+    top: -30px;
+    left: -30px;
+    width: 60px; /* Exemplo: ajuste para o tamanho desejado */
+    height: 60px; /* Exemplo: ajuste para o tamanho desejado */
+}
 
-        .flower-top-left {
-            top: -30px;
-            left: -30px;
-        }
-
-        .flower-bottom-right {
-            bottom: -30px;
-            right: -30px;
-        }
+.imagem-flor-decorativa-top-right {
+    position: absolute; /* Ou 'relative', 'fixed', dependendo do seu layout original */
+    top: 195px;
+    left: 990px;
+    width: 60px; /* Exemplo: ajuste para o tamanho desejado */
+    height: 60px; /* Exemplo: ajuste para o tamanho desejado */
+}
 
         /* Estilos para a seção de leis */
         .laws-section {
@@ -138,9 +130,9 @@
         }
 
         .laws-section h2 {
-            font-family: 'Comfortaa', cursive;
-            font-size: 2.8em;
-            color: var(--dark-text);
+            font-family: 'Unkempt', cursive;
+            font-size: 4em;
+            color: #ED365E;
             text-align: center;
             margin-bottom: 50px;
             text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.05);
@@ -333,7 +325,7 @@
     <header class="navbar">
         <div class="logo">
             <!-- Imagem do logo. Substitua o placeholder pela URL do seu logo real. -->
-            <img src="https://placehold.co/60x60/4A90E2/FFFFFF?text=Logo" alt="Instituto Mais Logo">
+            <img src="Rectangle 32.png" alt="Instituto Mais Logo">
         </div>
         <nav>
             <ul>
@@ -354,9 +346,9 @@
 
         <!-- Seção de texto introdutório com elementos decorativos de "flor" -->
         <section class="intro-text">
-            <div class="flower flower-top-left"></div>
+            <img src="Union (2).png" alt="Flor Decorativa Superior Esquerda" class="imagem-flor-decorativa-top-left">
             <p>Esta página aborda os direitos das pessoas com Síndrome de Down, destacando a importância da igualdade, do respeito e da participação plena na sociedade. A legislação vigente assegura a essas pessoas o acesso à educação, à saúde, ao trabalho e à inclusão social, promovendo uma vida com dignidade e autonomia.</p>
-            <div class="flower flower-bottom-right"></div>
+            <img src="Union (2).png" alt="Flor Decorativa Inferior Direita" class="imagem-flor-decorativa-top-right">
         </section>
 
         <!-- Seção de leis -->
