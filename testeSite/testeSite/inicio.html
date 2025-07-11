@@ -111,6 +111,40 @@
         .circle-yellow { background-color: #FFD700; } /* Amarelo */
         .circle-red { background-color: #FF0000; } /* Vermelho */
 
+        .imagem-circulo-rosa-decorativo {
+    position: absolute;
+    bottom: 170px;
+    left: 60%; /* Equivalente a left-1/4 */
+    transform: translateX(-50%) translateY(50%); /* Combinando -translate-x-1/2 e translate-y-1/2 */
+    width: 35px; /* Equivalente a w-16 (16 * 4 = 64px) */
+    height: 35px; /* Equivalente a h-16 (16 * 4 = 64px) */
+    border-radius: 50%; /* Para que a imagem seja redonda */
+}
+
+.imagem-flor-amarela-decorativa {
+    position: absolute;
+    top: 40px;
+    right: 35%; /* Equivalente a right-1/4 */
+    transform: translateX(50%) translateY(-50%); /* Combina translate-x-1/2 e -translate-y-1/2 */
+    width: 80px; /* Equivalente a w-20 (20 * 4 = 80px) */
+    height: 80px; /* Equivalente a h-20 (20 * 4 = 80px) */
+    border-radius: 50%; /* Para que a imagem seja redonda, caso não seja naturalmente */
+    /* As propriedades flex, items-center, justify-center e text-5xl não se aplicam diretamente a <img>
+       Elas eram para o emoji/conteúdo dentro do div. Se sua imagem já é uma flor, você não precisa delas. */
+}
+
+.my-custom-heading {
+            font-family: 'Unkempt', cursive; /* Aplica a fonte Unkempt */
+            font-size: 2.5rem; /* Equivalente a text-4xl do Tailwind, ou ajuste conforme precisar */
+            font-weight: bold; /* Equivalente a font-bold */
+            margin-bottom: 1.5rem; /* Equivalente a mb-6, ajuste conforme precisar */
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center; /* Garante que o texto fique centralizado se quebrar linha */
+            color: #000000; /* Cor do texto, pode ser ajustado */
+        }
+
         /* Responsividade para telas menores */
         @media (max-width: 768px) {
             .hero-section h1 {
@@ -228,15 +262,11 @@
     <section class="py-16 bg-white">
         <div class="container mx-auto px-6 text-gray-800 text-center relative">
             <!-- Círculos decorativos -->
-            <div class="absolute top-0 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-16 h-16 rounded-full circle-pink opacity-70"></div>
-            <div class="absolute top-1/2 right-0 transform -translate-x-1/2 -translate-y-1/2 w-20 h-20 rounded-full circle-yellow opacity-70"></div>
+            <img src="Ellipse 7.png" alt="Círculo Rosa Decorativo" class="imagem-circulo-rosa-decorativo">
+            <img src="Union (2).png" alt="Flor Amarela Decorativa" class="imagem-flor-amarela-decorativa">
 
-            <h2 class="text-4xl font-bold mb-6 flex items-center justify-center">
+            <h2 class="my-custom-heading">
                 Trissomia 21
-                <!-- Ícone de flor amarela -->
-                <svg class="w-10 h-10 ml-3 text-yellow-500" fill="currentColor" viewBox="0 0 20 20">
-                    <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zM8.707 7.293a1 1 0 00-1.414 1.414L8.586 10l-1.293 1.293a1 1 0 101.414 1.414L10 11.414l1.293 1.293a1 1 0 001.414-1.414L11.414 10l1.293-1.293a1 1 0 00-1.414-1.414L10 8.586 8.707 7.293z" clip-rule="evenodd" />
-                </svg>
             </h2>
             <p class="text-lg leading-relaxed max-w-3xl mx-auto">
                 A <span class="font-bold">síndrome de Down</span>, também conhecida como trissomia do cromossomo 21, é uma alteração genética que resulta em uma série de características físicas e cognitivas que diferem das de indivíduos típicos.
