@@ -16,14 +16,44 @@
             overflow-x: hidden; /* Evita rolagem horizontal */
         }
         /* Estilo para o cabeçalho fixo */
-        .header-fixed {
-            position: fixed;
-            top: 0;
-            width: 100%;
-            z-index: 1000;
-            background-color: #0967E1; /* Fundo branco para o cabeçalho */
-            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Sombra suave para destaque */
+        .navbar {
+            display: flex; /* Usa flexbox para alinhar itens */
+            justify-content: space-between; /* Espaça o logo e o menu */
+            align-items: center; /* Centraliza verticalmente */
+            background-color: #0967E1;
+            padding: 10px 40px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Sombra suave */
         }
+
+        .navbar .logo img {
+            height: 60px; /* Altura do logo */
+            border-radius: 50%; /* Torna o logo circular */
+        }
+
+        .navbar nav ul {
+            list-style: none; /* Remove marcadores de lista */
+            margin: 0;
+            padding: 0;
+            display: flex; /* Usa flexbox para os itens do menu */
+            gap: 30px; /* Espaçamento entre os itens do menu */
+        }
+
+        .navbar nav ul li a {
+            color: white;
+            text-decoration: none; /* Remove sublinhado */
+            font-weight: 600;
+            font-size: 1.1em;
+            transition: color 0.3s ease; /* Transição suave para o hover */
+            padding: 5px 10px; /* Preenchimento para área de clique */
+            border-radius: 5px; /* Cantos arredondados nos links */
+        }
+
+        .navbar nav ul li a:hover,
+        .navbar nav ul li a.active {
+            color: white;
+            background-color: rgba(255, 255, 255, 0.1); /* Fundo leve no hover/ativo */
+        }
+
         /* Estilo para a seção de herói com gradiente amarelo */
         .hero-section {
             background: white;
@@ -156,7 +186,7 @@
         .dropdown-content {
             display: none; /* Escondido por padrão */
             position: absolute;
-            background-color: #f9f9f9;
+            background-color: #0967E1;
             min-width: 160px;
             box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
             z-index: 1;
@@ -167,7 +197,7 @@
         }
 
         .dropdown-content a {
-            color: black;
+            color: white;
             padding: 12px 16px;
             text-decoration: none;
             display: block;
@@ -208,24 +238,22 @@
 <body class="bg-gray-50" id="top">
 
     <!-- Cabeçalho Fixo -->
-    <header class="header-fixed py-4 px-6 flex justify-between items-center">
-        <div class="flex items-center space-x-2">
-            <!-- Logo "1 A Mais" -->
-            <img src="Rectangle 32.png" alt="Logo 1 A Mais" class="w-10 h-10 rounded-full">
+    <header class="navbar">
+        <div class="logo">
+            <!-- Imagem do logo. Substitua o placeholder pela URL do seu logo real. -->
+            <img src="Rectangle 32.png" alt="Instituto Mais Logo">
         </div>
-        <!-- Navegação Desktop -->
-        <nav class="desktop-nav">
-            <ul class="flex space-x-6 text-gray-700 font-medium">
-                <li><a href="#top" class="hover:text-blue-600 transition duration-300">Início</a></li>
-                <li class="dropdown-container">
-                    <a href="#" class="hover:text-blue-600 transition duration-300">Sobre</a>
+        <nav>
+            <ul>
+                <li><a href="inicio.html">Início</a></li>
+                <li><a href="sobre.html" class="active">Sobre</a></li>
                     <div class="dropdown-content">
-                        <a href="#sindrome-de-down">Síndrome de Down</a>
+                        <a href="sobresindrome.html">Síndrome de Down</a>
                         <!-- Adicione outros itens do dropdown aqui se necessário -->
                     </div>
                 </li>
-                <li><a href="#" class="hover:text-blue-600 transition duration-300">Direitos</a></li>
-                <li><a href="#" class="hover:text-blue-600 transition duration-300">Relatos</a></li>
+                <li><a href="direitos.html">Direitos</a></li>
+                <li><a href="relatos.html">Relatos</a></li>
             </ul>
         </nav>
     </header>
