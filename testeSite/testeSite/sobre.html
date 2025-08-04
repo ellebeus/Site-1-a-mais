@@ -177,42 +177,45 @@
     font-family: 'Unkempt', cursive; /* 'cursive' é um fallback genérico */
 }
 
-        /* Estilos do Dropdown */
-        .dropdown-container {
-            position: relative;
-            display: inline-block; /* Permite que o dropdown se posicione corretamente */
-        }
+/* O contêiner (div) que servirá como dropdown */
+.dropdown {
+  position: relative;
+  display: inline-block;
+}
 
-        .dropdown-content {
-            display: none; /* Escondido por padrão */
-            position: absolute;
-            background-color: #0967E1;
-            min-width: 160px;
-            box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
-            z-index: 1;
-            border-radius: 0.5rem;
-            top: 100%; /* Posiciona abaixo do item pai */
-            left: 0;
-            padding: 0.5rem 0;
-        }
+/* Conteúdo do dropdown (links) - escondido por padrão */
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #0967E1;
+  min-width: 160px;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  z-index: 1;
+  border-radius: 8px;
+}
 
-        .dropdown-content a {
-            color: white;
-            padding: 12px 16px;
-            text-decoration: none;
-            display: block;
-            text-align: left;
-            transition: background-color 0.3s ease;
-        }
+/* Estilo para os links dentro do dropdown */
+.dropdown-content a {
+  color: black;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+}
 
-        .dropdown-content a:hover {
-            background-color: #f1f1f1;
-        }
+/* Mudar a cor dos links do dropdown ao passar o mouse */
+.dropdown-content a:hover {
+  background-color: #0967E1;
+}
 
-        /* Mostra o dropdown quando o mouse está sobre o contêiner */
-        .dropdown-container:hover .dropdown-content {
-            display: block;
-        }
+/* Mostrar o menu dropdown quando o mouse estiver sobre o botão */
+.dropdown:hover .dropdown-content {
+  display: block;
+}
+
+/* Mudar a cor do botão do dropdown quando o menu estiver sendo exibido */
+.dropdown:hover .dropbtn {
+  background-color: #0967E1;
+}
 
         /* Responsividade para telas menores (menu hambúrguer) */
         @media (max-width: 768px) {
@@ -246,12 +249,12 @@
         <nav>
             <ul>
                 <li><a href="inicio.html">Início</a></li>
-                <li><a href="sobre.html" class="active">Sobre</a></li>
+                <li class="dropdown">
+                    <a href="sobre.html" class="dropbtn active">Sobre</a>
                     <div class="dropdown-content">
-                        <li><a href="sobre.html" class="active">Sobre</a></li>
-                        <li><a href="sobresindrome.html">Síndrome de Down</a></li>
-                        <!-- Adicione outros itens do dropdown aqui se necessário -->
+                        <a href="sobresindrome.html">Síndrome de Down</a>
                     </div>
+                </li>
                 <li><a href="direitos.html">Direitos</a></li>
                 <li><a href="relatos.html">Relatos</a></li>
             </ul>

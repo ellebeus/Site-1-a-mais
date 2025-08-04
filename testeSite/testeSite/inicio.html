@@ -145,6 +145,46 @@
             color: #000000; /* Cor do texto, pode ser ajustado */
         }
 
+        /* O contêiner (div) que servirá como dropdown */
+.dropdown {
+  position: relative;
+  display: inline-block;
+}
+
+/* Conteúdo do dropdown (links) - escondido por padrão */
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #0967E1;
+  min-width: 160px;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  z-index: 1;
+  border-radius: 8px;
+}
+
+/* Estilo para os links dentro do dropdown */
+.dropdown-content a {
+  color: black;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+}
+
+/* Mudar a cor dos links do dropdown ao passar o mouse */
+.dropdown-content a:hover {
+  background-color: #0967E1;
+}
+
+/* Mostrar o menu dropdown quando o mouse estiver sobre o botão */
+.dropdown:hover .dropdown-content {
+  display: block;
+}
+
+/* Mudar a cor do botão do dropdown quando o menu estiver sendo exibido */
+.dropdown:hover .dropbtn {
+  background-color: #0967E1;
+}
+
         /* Responsividade para telas menores */
         @media (max-width: 768px) {
             .hero-section h1 {
@@ -177,7 +217,12 @@
         <nav>
             <ul>
                 <li><a href="inicio.html" class="active">Início</a></li>
-                <li><a href="sobre.html">Sobre</a></li>
+                <li class="dropdown">
+                    <a href="sobre.html" class="dropbtn">Sobre</a>
+                    <div class="dropdown-content">
+                        <a href="sobresindrome.html">Síndrome de Down</a>
+                    </div>
+                    </li>
                 <li><a href="direitos.html">Direitos</a></li>
                 <li><a href="relatos.html" >Relatos</a></li>
             </ul>
