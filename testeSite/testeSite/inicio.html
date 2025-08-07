@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Síndrome de Down</title>
+    <link rel="icon" type="image/png" href="Rectangle 32.png">
     <!-- Inclui o Tailwind CSS para estilização rápida e responsiva -->
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
@@ -104,12 +105,49 @@
         .btn-education:hover { background-color: #EA580C; }
         .btn-personal:hover { background-color: #2563EB; }
 
-        /* Estilos para os círculos coloridos */
-        .circle-orange { background-color: #FF8C00; } /* Laranja */
-        .circle-pink { background-color: #FF69B4; } /* Rosa */
-        .circle-blue { background-color: #1E90FF; } /* Azul */
-        .circle-yellow { background-color: #FFD700; } /* Amarelo */
-        .circle-red { background-color: #FF0000; } /* Vermelho */
+
+.flor-rosa {
+    top: -30px; 
+  left: 106px;
+  width: 122px;
+  height: 134px;
+  position: absolute;
+  z-index: 2;
+}
+
+.circulo-amarelo {
+    top: 300px; 
+  left: 130px;
+  width: 134px;
+  height: 136px;
+  position: absolute;
+}
+
+/* Exemplo de como você poderia mover uma das imagens individualmente */
+.circulo-laranja {
+    top: -50px; 
+  left: 420px;
+  width: 70px;
+  height: 70px;
+  position: absolute;
+}
+
+.flor-azul {
+  top: 305px; 
+  left: 465px;
+  width: 80px;
+  height: 80px;
+  position: absolute;
+  z-index: 2;
+}
+
+.lacinho {
+     top: 20px; 
+  left: 880px;
+  width: 140px;
+  height: 140px;
+  position: absolute;
+}
 
         .imagem-circulo-rosa-decorativo {
     position: absolute;
@@ -141,6 +179,18 @@
             display: flex;
             align-items: center;
             justify-content: center;
+            text-align: center; /* Garante que o texto fique centralizado se quebrar linha */
+            color: #000000; /* Cor do texto, pode ser ajustado */
+        }
+
+.titulo {
+            font-family: 'Unkempt', cursive; /* Aplica a fonte Unkempt */
+            font-size: 3.0rem; /* Equivalente a text-4xl do Tailwind, ou ajuste conforme precisar */
+            font-weight: bold; /* Equivalente a font-bold */
+            margin-bottom: 1.5rem; /* Equivalente a mb-6, ajuste conforme precisar */
+            display: flex;
+            align-items: left;
+            justify-content: left;
             text-align: center; /* Garante que o texto fique centralizado se quebrar linha */
             color: #000000; /* Cor do texto, pode ser ajustado */
         }
@@ -242,21 +292,22 @@
     <section class="py-16 bg-white">
         <div class="container mx-auto px-6 flex flex-col md:flex-row items-center justify-center relative">
             <!-- Círculos decorativos -->
-            <div class="absolute top-0 left-1/4 transform -translate-x-1/2 -translate-y-1/2 w-24 h-24 rounded-full circle-orange opacity-70"></div>
-            <div class="absolute top-1/2 left-1/4 transform -translate-x-1/2 -translate-y-1/2 w-16 h-16 rounded-full circle-pink opacity-70"></div>
-            <div class="absolute bottom-0 left-1/4 transform -translate-x-1/2 -translate-y-1/2 w-12 h-12 rounded-full circle-blue opacity-70"></div>
+            <div class="container-imagem">
+        <img src="Union.png" alt="Flor Rosa" class="flor-rosa" />
+        <img src="circulo laranja.png" alt="Circulo laranja" class="circulo-laranja" />
+        <img src="circulo grande amarelo.png" alt="Circulo Amarelo" class="circulo-amarelo" />
+        <img src="flor azul.png" alt="Flor Azul" class="flor-azul" />
+    </div>
 
             <div class="md:w-1/2 flex justify-center mb-8 md:mb-0 relative">
                 <!-- Imagem do bebê sorrindo -->
-                <img src="image (2).png" alt="Bebê sorrindo" class="rounded-full shadow-lg max-w-full h-auto">
+                <img src="image (2).png" alt="Bebê sorrindo" class="rounded-full max-w-full h-auto">
             </div>
             <div class="md:w-1/2 md:pl-12 text-gray-800">
-                <h2 class="text-4xl font-bold mb-4 flex items-center">
+                <h2 class="titulo">
                     21 de Março:
                     <!-- Ícone de laço amarelo -->
-                    <svg class="w-10 h-10 ml-3 text-yellow-500" fill="currentColor" viewBox="0 0 20 20">
-                        <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm-1-12a1 1 0 10-2 0v4a1 1 0 00.293.707l3 3a1 1 0 001.414-1.414L9 10.586V6z" clip-rule="evenodd" />
-                    </svg>
+                    <img src="Rectangle 43.png" alt="Laço" class="lacinho" />
                 </h2>
                 <p class="text-lg leading-relaxed">
                     Dia Internacional da Síndrome de Down, essa data foi proposta pela Down Syndrome International, pois faz referência aos três cromossomos no par 21. Uma atividade comum neste dia é usar pares de meias coloridas ou incompatíveis, como forma de apoio a pessoas com síndrome de down.
