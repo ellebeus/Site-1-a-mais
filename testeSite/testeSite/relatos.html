@@ -339,6 +339,26 @@
                 font-size: 0.95em;
             }
         }
+
+         #scrollToTopBtn {
+    display: none; /* Esconde o botão por padrão */
+    position: fixed; /* Fixa o botão na tela */
+    bottom: 20px; /* Distância do fundo */
+    right: 30px; /* Distância da direita */
+    z-index: 99; /* Garante que o botão fique na frente de outros elementos */
+    border: none; /* Remove a borda */
+    outline: none; /* Remove o contorno ao clicar */
+    background-color: #0967E1; /* Cor de fundo */
+    color: white; /* Cor do texto/ícone */
+    cursor: pointer; /* Muda o cursor para "mão" */
+      width: 60px; /* Define a largura do botão */
+  height: 60px; /* Define a altura do botão */
+    border-radius: 10px;
+}
+
+#scrollToTopBtn:hover {
+    background-color: #3B82F6;
+}
     </style>
 </head>
 <body>
@@ -396,37 +416,33 @@
         </section>
     </main>
 
+    <button id="scrollToTopBtn">
+        &#8593;
+    </button>
 
     <script>
-        /* JAVASCRIPT EMBUTIDO AQUI */
-        // O JavaScript para esta página é mínimo, pois o conteúdo é predominantemente estático.
-        // No entanto, é uma boa prática incluir o arquivo JS e um listener para o carregamento do DOM.
+       // Pega o botão
+let mybutton = document.getElementById("scrollToTopBtn");
 
-        document.addEventListener('DOMContentLoaded', () => {
+// Quando a página é rolada, executa a função scrollFunction
+window.onscroll = function() {scrollFunction()};
+
+function scrollFunction() {
+    // Se a rolagem vertical for maior que 20 pixels, mostra o botão
+    if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+        mybutton.style.display = "block";
+    } else {
+        mybutton.style.display = "none";
+    }
+}
+
+// Quando o usuário clica no botão, rola a página para o topo
+mybutton.addEventListener("click", function() {
+    document.body.scrollTop = 0; // Para navegadores Safari
+    document.documentElement.scrollTop = 0; // Para Chrome, Firefox, IE e Opera
+});
             // Este console.log serve para verificar se o script está sendo carregado corretamente.
             console.log('Página "Relatos" carregada com sucesso!');
-
-            // Exemplo de como você poderia adicionar interatividade futura:
-            // Se houvesse um menu responsivo (hambúrguer), você adicionaria o código aqui:
-            // const menuToggle = document.querySelector('.menu-toggle');
-            // const navMenu = document.querySelector('.navbar nav ul');
-            //
-            // if (menuToggle) {
-            //     menuToggle.addEventListener('click', () => {
-            //         navMenu.classList.toggle('show');
-            //     });
-            // }
-
-            // Ou se você quisesse adicionar um efeito de scroll suave para âncoras:
-            // document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-            //     anchor.addEventListener('click', function (e) {
-            //         e.preventDefault();
-            //         document.querySelector(this.getAttribute('href')).scrollIntoView({
-            //             behavior: 'smooth'
-            //         });
-            //     });
-            // });
-        });
     </script>
 </body>
 </html>
