@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Relatos - Instituto Mais</title>
+    <title>1 A Mais - Relatos</title>
     <link rel="icon" type="image/png" href="Rectangle 32.png">
     <!-- Importação das fontes do Google Fonts -->
     <link href="https://fonts.googleapis.com/css2?family=Unkempt:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
@@ -19,7 +19,7 @@
             --light-blue: #E0F2F7;
             --dark-text: #333;
             --paragraph-text: #555;
-            --red-bullet: #FF6B6B;
+            --red-bullet: #EDC536;
             --yellow-flower: #FFD666;
             --white: #FFFFFF;
             --orange-highlight: #FF9800; /* Nova cor para o destaque laranja */
@@ -101,6 +101,20 @@
             display: flex;
             flex-direction: column;
             gap: 60px;
+        }
+
+        .intro-text {
+            position: relative; /* Necessário para posicionar as "flores" */
+            background-color: var(--red-bullet);
+            color: var(--white);
+            padding: 40px 60px;
+            margin: 60px auto; /* Centraliza e adiciona margem */
+            max-width: 900px;
+            border-radius: 15px;
+            text-align: center;
+            font-size: 1.1em;
+            line-height: 1.6;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2); /* Sombra mais pronunciada */
         }
 
         .relato-item {
@@ -390,6 +404,10 @@
             <h1>Relatos</h1>
         </section>
 
+        <section class="intro-text">
+            <p>Esta página contém os relatos das experiências de alguns profissionais da área da educação e auxiliares em relação as pessoas com Síndrome de Down.</p>
+        </section>
+
         <!-- Container para os relatos individuais -->
         <section class="relatos-container">
             <!-- Primeiro relato (imagem à esquerda) -->
@@ -399,6 +417,7 @@
                     <img src="sandro.png" alt="Imagem do Professor">
                 </div>
                 <div class="text-content">
+                    <p>Sandro Martins da Costa (Professor)</p>
                     <p>"Minha experiência como professor foi desafiadora e extraordinária. Ao adaptar metodologias e promover a autonomia, percebi o impacto real no desenvolvimento da aluna. Um dos momentos mais marcantes foi acompanhar o seu progresso no uso autônomo do computador, algo que inicialmente parecia inatingível. Cada pequeno reconhecimento de letras, executando comandos básicos e navegando entre páginas era uma recompensa imensa. Aprendemos a valorizar pequenas conquistas, que na verdade representam grandes vitórias. Fora da sala de educação, também aprendemos com nossos alunos todos os dias."</p>
                 </div>
             </div>
@@ -410,6 +429,7 @@
                     <img src="alice.png" alt="Imagem da Mulher">
                 </div>
                 <div class="text-content">
+                    <p>Alice Gomes (Auxiliar de Aluno)</p>
                     <p>"Uma situação que me marcou positivamente foi ver a aluna fazer o login no computador da escola pela primeira vez sem precisar conferir os dados, mostrando autonomia e segurança. Também acompanhar a evolução na leitura e escrita, desde as letras no ABC até as frases e parágrafos, me ensinaram que cada caso é único e não pode ser generalizado. Eles são pessoas que tem suas especificidades e o melhor modo de lidar e auxiliar é conhecer a pessoa, perceber suas limitações e potencialidades, ter paciência, e se adaptar."</p>
                 </div>
             </div>
