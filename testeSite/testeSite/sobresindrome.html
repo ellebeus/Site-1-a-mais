@@ -315,11 +315,11 @@
         <!-- Container para o conteúdo das abas -->
         <section class="tab-content-container">
             <!-- Conteúdo da Aba: Família -->
-            <div id="familia" class="tab-content-item active-content">
+            <div id="familia" class="tab-content-item-active-content">
                 <h3>A Família no Contexto da Síndrome de Down</h3>
                 <p>A descoberta da gravidez é um momento repleto de emoções, marcado por sonhos e expectativas sobre o futuro bebê. Durante a gestação, é comum que os pais idealizem seu filho, imaginando suas características e traçando planos para sua vida.</p>
                 <p>Entretanto, quando há a suspeita ou confirmação de uma condição como a Síndrome de Down, essas expectativas podem ser desafiadas, exigindo uma reconfiguração das projeções iniciais.</p>
-                <p>Por esse motivo, são realizados diversos exames pré-natais ao longo da gestação. Entre eles, destacam-se o exame genético de cariótipo e a ultrassonografia, que podem auxiliar na identificação de possíveis alterações genéticas, como a Síndrome de Down.</p>
+                <p>É possível identificar pelo conjunto de alguns exames ainda durante a gravides, sendo eles a ultrassonografia de translucência nucal, exames genéticos cariótipos (amniocentese e biópsia do vilo corial) e o NIPT que é um exame não invasivo coletado a partir do sangue da gestante.</p>
                 <p>O diagnóstico precoce permite que os pais se preparem emocionalmente, busquem apoio profissional e tenham acesso às informações adequadas para lidar com a situação.</p>
                 <p>O suporte psicológico é fundamental nesse processo, assim como o acompanhamento contínuo de profissionais após o nascimento, a fim de estimular o desenvolvimento físico, emocional e cognitivo da criança.</p>
             </div>
@@ -413,5 +413,29 @@ mybutton.addEventListener("click", function() {
             });
         });
     </script>
+    <script>
+  document.addEventListener("DOMContentLoaded", function() {
+    const hash = window.location.hash;
+    
+    // Se a URL tiver um hash (ex: #educacao)
+    if (hash) {
+      // Oculta todas as abas, removendo a classe ativa
+      document.querySelectorAll('.tab-content-item-active-content').forEach(item => {
+        item.classList.remove('tab-content-item-active-content');
+        item.classList.add('tab-content-item');
+      });
+
+      // Mostra a aba correspondente ao hash
+      const targetElement = document.getElementById(hash.substring(1));
+      if (targetElement) {
+        targetElement.classList.remove('tab-content-item');
+        targetElement.classList.add('tab-content-item-active-content');
+
+        // Opcional: rola a página para o topo da aba
+        targetElement.scrollIntoView({ behavior: 'smooth' });
+      }
+    }
+  });
+</script>
 </body>
 </html>
